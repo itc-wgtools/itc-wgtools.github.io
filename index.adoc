@@ -55,7 +55,7 @@ The following are the documents can be used to submit comments (comments can als
 |Title ^|Link
 
 .^|Comment Matrix
-^|image:excel-icon-16670.png[link=./comment/Tools-WG-Comments-Matrix.xlsx,40,]
+^|image:excel-icon-16670.png[link=./comments/Tools-WG-Comments-Matrix.xlsx,40,]
 
 |===
 
