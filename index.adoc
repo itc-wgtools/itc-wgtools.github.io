@@ -1,8 +1,8 @@
 = CCUF Team Tools Working Group
 :showtitle:
 :imagesdir: images
-:revnumber: 0.2
-:revdate: 2019-06-24
+:revnumber: 0.3
+:revdate: 2019-07-30
 
 == Introduction
 The CCUF established the Team Tools Working Group to work on a set of tools for iTCs. The overall goal is to produce a set of guidance documents on how to use the tools for an iTC and templates for the documents the iTC will need (both to product, such as a cPP and for the processes of managing the iTC itself). The output from this group is intended to be freely available to all iTCs, and will hopefully be maintained over the long term.
@@ -16,13 +16,13 @@ The most recent documents available for review will be posted here when the WG f
 == Current Status
 The WG is working towards the completion of the documentation in time for the https://www.iccc2019.com/[ICCC 2019]. As a volunteer effort, it is possible not everything will be completed in time for the conference, but the documents and templates will be prioritized such that the available material should cover the highest needs.
 
-The chart below shows the expected timeline for producing the documents.
+The chart below shows the expected timeline for producing the documents. We are currently in Public Review Phase 1 while working on the Phase 2 Drafts.
 
 [ditaa]
 ....
                                   
     +----------+    +----------+   +----------+   +----------+   +----------+
-    | cYEL     |    |          |   |          |   |          |   |          |
+    |          |    | cYEL     |   | cGRE     |   |          |   |          |
     | Phase 1  |    |  Public  |   | Phase 2  |   |  Public  |   | Public   |
     | Drafts   |--> |  Review  |-->| Drafts   |-->|  Review  |-->| Release  |
     |          |    |  Phase 1 |   |          |   |  Phase 2 |   |          |
