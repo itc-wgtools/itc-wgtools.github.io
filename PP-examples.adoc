@@ -5,7 +5,7 @@
 :revdate: 2019-08-01
 
 == Introduction
-This page is specifically for providing examples for creating Security Functional Requirements and associated Assurance Activities.
+This page is specifically for providing examples for creating Security Functional Requirements and associated Evaluation Activities.
 
 == Developing Requirements
 When developing the requirements for the cPP, it is important to realize there are "standard" requirements and "extended" requirements. 
@@ -105,7 +105,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 *FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.
 
-=== Assurance Activities
+=== Evaluation Activities
 ==== EA for FIA_MBE_EXT.1
 
 ===== Objective of the EA
