@@ -1,8 +1,8 @@
 = CCUF Team Tools Working Group
 :showtitle:
 :imagesdir: images
-:revnumber: 0.3
-:revdate: 2019-07-30
+:revnumber: 0.4
+:revdate: 2019-08-13
 
 == Introduction
 The CCUF established the Team Tools Working Group to work on a set of tools for iTCs. The overall goal is to produce a set of guidance documents on how to use the tools for an iTC and templates for the documents the iTC will need (both to product, such as a cPP and for the processes of managing the iTC itself). The output from this group is intended to be freely available to all iTCs, and will hopefully be maintained over the long term.
@@ -18,7 +18,7 @@ The WG is working towards the completion of the documentation in time for the ht
 
 The chart below shows the expected timeline for producing the documents. We are currently in Public Review Phase 1 while working on the Phase 2 Drafts.
 
-[ditaa]
+[ditaa, "Current_Status.png"]
 ....
                                   
     +----------+    +----------+   +----------+   +----------+   +----------+
@@ -76,6 +76,10 @@ The following are the documents are currently available for review:
 .^|iTC User Guidance for GitHub
 ^.^|0.2
 ^.^|image:Crystal_Clear_mimetype_pdf.png[link=./drafts/iTC_UG_GitHub_v0.2DRAFT.pdf,40,]  image:iconfinder_HTML_Logo_65687.png[link=./drafts/iTC_UG_GitHub_v0.2DRAFT.html,40,] image:Octocat.jpg[link=https://github.com/itc-wgtools/cPP-Tools/blob/develop/User%20Guidance/userguide.adoc,50,]
+
+.^|iTC Administrator Guidance for Tools
+^.^|0.1
+^.^|  image:iconfinder_HTML_Logo_65687.png[link=./admin-guide/index.html,40,]
 
 |===
 
