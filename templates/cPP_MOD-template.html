@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>collaborative Protection Profile for Coffee Maker</title>
+<title>collaborative PP-Module for Coffee Maker</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -448,7 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>collaborative Protection Profile for <em>Coffee Maker</em></h1>
+<h1>collaborative PP-Module for <em>Coffee Maker</em></h1>
 <div class="details">
 <span id="revnumber">version 0.2,</span>
 <span id="revdate">2019-08-23</span>
@@ -469,9 +469,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_related_documents">Related Documents</a></li>
 </ul>
 </li>
-<li><a href="#_pp_introduction">1. PP Introduction</a>
+<li><a href="#_pp_module_introduction">1. PP-Module Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_pp_reference_identification">1.1. PP Reference Identification</a></li>
+<li><a href="#_pp_module_reference_identification">1.1. PP-Module Reference Identification</a></li>
 <li><a href="#_toe_overview">1.2. TOE Overview</a></li>
 <li><a href="#_toe_design">1.3. TOE Design</a></li>
 <li><a href="#_toe_use_case">1.4. TOE Use Case</a>
@@ -482,11 +482,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#_cc_conformance_claims">2. CC Conformance Claims</a>
-<ul class="sectlevel2">
-<li><a href="#_components_allowed_with_this_cpp_in_a_pp_configuration">2.1. Components allowed with this cPP in a PP-Configuration</a></li>
-</ul>
-</li>
+<li><a href="#_cc_conformance_claims">2. CC Conformance Claims</a></li>
 <li><a href="#_security_problem_definition">3. Security Problem Definition</a>
 <ul class="sectlevel2">
 <li><a href="#_threats">3.1. Threats</a></li>
@@ -517,38 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_trusted_channels_ftp">5.12. Trusted Channels (FTP)</a></li>
 </ul>
 </li>
-<li><a href="#_security_assurance_requirements">6. Security Assurance Requirements</a>
-<ul class="sectlevel2">
-<li><a href="#_ase_security_target">6.1. ASE: Security Target</a></li>
-<li><a href="#_adv_development">6.2. ADV: Development</a>
-<ul class="sectlevel3">
-<li><a href="#_basic_functional_specification_adv_fsp_1">6.2.1. Basic Functional Specification (ADV_FSP.1)</a></li>
-</ul>
-</li>
-<li><a href="#_agd_guidance_documentation">6.3. AGD: Guidance Documentation</a>
-<ul class="sectlevel3">
-<li><a href="#_operational_user_guidance_agd_ope_1">6.3.1. Operational User Guidance (AGD_OPE.1)</a></li>
-<li><a href="#_preparative_procedures_agd_pre_1">6.3.2. Preparative Procedures (AGD_PRE.1)</a></li>
-</ul>
-</li>
-<li><a href="#_class_alc_life_cycle_support">6.4. Class ALC: Life-cycle Support</a>
-<ul class="sectlevel3">
-<li><a href="#_labelling_of_the_toe_alc_cmc_1">6.4.1. Labelling of the TOE (ALC_CMC.1)</a></li>
-<li><a href="#_toe_cm_coverage_alc_cms_1">6.4.2. TOE CM Coverage (ALC_CMS.1)</a></li>
-</ul>
-</li>
-<li><a href="#_class_ate_tests">6.5. Class ATE: Tests</a>
-<ul class="sectlevel3">
-<li><a href="#_independent_testing_conformance_ate_ind_1">6.5.1. Independent Testing – Conformance (ATE_IND.1)</a></li>
-</ul>
-</li>
-<li><a href="#_class_ava_vulnerability_assessment">6.6. Class AVA: Vulnerability Assessment</a>
-<ul class="sectlevel3">
-<li><a href="#_vulnerability_survey_ava_van_1">6.6.1. Vulnerability Survey (AVA_VAN.1)</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#_security_assurance_requirements">6. Security Assurance Requirements</a></li>
 <li><a href="#_optional_requirements">Appendix A: Optional Requirements</a></li>
 <li><a href="#_selection_based_requirements">Appendix B: Selection-Based Requirements</a></li>
 <li><a href="#_extended_component_definitions">Appendix C: Extended Component Definitions</a>
@@ -581,21 +546,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_health_testing">D.4. Health Testing</a></li>
 </ul>
 </li>
-<li><a href="#_key_management_document">Appendix E: Key Management Document</a>
+<li><a href="#_consistency_rationale">Appendix E: Consistency Rationale</a>
 <ul class="sectlevel2">
-<li><a href="#_key_management_description">E.1. Key Management Description</a></li>
-<li><a href="#_key_management_diagram">E.2. Key Management Diagram:</a></li>
+<li><a href="#_consistency_of_objectives">E.1. Consistency of Objectives</a></li>
+<li><a href="#_consistency_of_requirements">E.2. Consistency of Requirements</a></li>
 </ul>
 </li>
-<li><a href="#_consistency_rationale">Appendix F: Consistency Rationale</a>
-<ul class="sectlevel2">
-<li><a href="#_consistency_of_objectives">F.1. Consistency of Objectives</a></li>
-<li><a href="#_consistency_of_requirements">F.2. Consistency of Requirements</a></li>
-</ul>
-</li>
-<li><a href="#_sfr_list">Appendix G: SFR List</a></li>
-<li><a href="#_glossary">Appendix H: Glossary</a></li>
-<li><a href="#_acronyms">Appendix I: Acronyms</a></li>
+<li><a href="#_sfr_list">Appendix F: SFR List</a></li>
+<li><a href="#_glossary">Appendix G: Glossary</a></li>
+<li><a href="#_acronyms">Appendix H: Acronyms</a></li>
 </ul>
 </div>
 </div>
@@ -604,7 +563,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_acknowledgements">Acknowledgements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This collaborative Protection Profile (cPP) was developed by the Coffee Maker international Technical Community (iTC) also known as CM-iTC with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.</p>
+<p>This collaborative Protection Profile Module (PP-Module) was developed by the Coffee Maker international Technical Community (iTC) also known as CM-iTC with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.</p>
 </div>
 <div class="paragraph">
 <p><strong>INDUSTRY</strong></p>
@@ -677,63 +636,39 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_objectives_of_document">Objectives of Document</h3>
 <div class="paragraph">
-<p>This document presents the Common Criteria (CC) collaborative Protection Profile (cPP) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for <em>some technology type</em>. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP, are described in <a href="#SD">[SD]</a>.</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>The rest of this section is boilerplate and should not need edits.</p>
-</div>
-</div>
+<p>This document presents the Common Criteria (CC) collaborative Protection Profile Module (PP-Module) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for <em>some technology type</em>. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this PP-Module, are described in <a href="#SD">[SD]</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_scope_of_document">Scope of Document</h3>
 <div class="paragraph">
-<p>The scope of the cPP within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a cPP defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements [<a href="#CC1">[CC1]</a>, Section B.14].</p>
+<p>The scope of the PP-Module within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a PP-Module defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements [<a href="#CC1">[CC1]</a>, Section B.14].</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_intended_readership">Intended Readership</h3>
 <div class="paragraph">
-<p>The target audiences of this cPP are developers, CC consumers, system integrators, evaluators and schemes.</p>
+<p>The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes.</p>
 </div>
 <div class="paragraph">
-<p>Although the cPP and SD may contain minor editorial errors, the cPP is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the CM-iTC.</p>
+<p>Although the PP-Module and SD may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the CM-iTC.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_related_documents">Related Documents</h3>
-<div class="admonitionblock review">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-review" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Edit the Supporting Document in the list.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><span id="CC1">[CC1]</span> Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.</p>
+<p><span id="CC1">[CC1]</span>	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
 <p><span id="CC2">[CC2]</span> Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
-<p><span id="CC3">[CC3]</span> Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.</p>
+<p><span id="CC3">[CC3]</span>	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
-<p><span id="CEM">[CEM]</span> Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.</p>
-</li>
-<li>
-<p><span id="SD">[SD]</span> Supporting Document</p>
+<p><span id="CEM">[CEM]</span>	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.</p>
 </li>
 </ul>
 </div>
@@ -744,20 +679,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pp_introduction">1. PP Introduction</h2>
+<h2 id="_pp_module_introduction">1. PP-Module Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_pp_reference_identification">1.1. PP Reference Identification</h3>
+<h3 id="_pp_module_reference_identification">1.1. PP-Module Reference Identification</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>PP Reference: collaborative Protection Profile for _Coffee Maker_</p>
+<p>PP-Module Reference: collaborative PP-Module for _Coffee Maker_</p>
 </li>
 <li>
-<p>PP Version: 0.2</p>
+<p>PP-Module Version: 0.2</p>
 </li>
 <li>
-<p>PP Date: 2019-08-23</p>
+<p>PP-Module Date: 2019-08-23</p>
 </li>
 </ul>
 </div>
@@ -830,7 +765,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_cc_conformance_claims">2. CC Conformance Claims</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As defined by the references <a href="#CC1">[CC1]</a>, <a href="#CC2">[CC2]</a> and <a href="#CC3">[CC3]</a>, this cPP:</p>
+<p>As defined by the references <a href="#CC1">[CC1]</a>, <a href="#CC2">[CC2]</a> and <a href="#CC3">[CC3]</a>, this PP-Module:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -839,9 +774,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>is Part 2 extended,</p>
-</li>
-<li>
-<p>is Part 3 conformant,</p>
 </li>
 <li>
 <p>does not claim conformance to any other security functional requirement packages.</p>
@@ -863,7 +795,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph">
-<p>In order to be conformant to this cPP, a ST shall demonstrate Exact Conformance. Exact Conformance, as a subset of Strict Conformance as defined by the CC, is defined as the ST containing all of the SFRs in <a href="#_security_functional_requirements">Security Functional Requirements</a> (these are the mandatory SFRs) of this cPP, and potentially SFRs from <a href="#_consistency_rationale">Consistency Rationale</a> (these are selection-based SFRs) and <a href="#_selection_based_requirements">Selection-Based Requirements</a> (these are optional SFRs) of this cPP. While iteration is allowed, no additional requirements (from the CC parts 2 or 3, or definitions of extended components not already included in this cPP) are allowed to be included in the ST. Further, no SFRs in <a href="#_security_functional_requirements">Security Functional Requirements</a> of this cPP are allowed to be omitted.</p>
+<p>In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance, as a subset of Strict Conformance as defined by the CC, is defined as the ST containing all of the SFRs in <a href="#_security_functional_requirements">Security Functional Requirements</a> (these are the mandatory SFRs) of this PP-Module, and potentially SFRs from <a href="#_consistency_rationale">Consistency Rationale</a> (these are selection-based SFRs) and <a href="#_selection_based_requirements">Selection-Based Requirements</a> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from the CC parts 2 or 3, or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <a href="#_security_functional_requirements">Security Functional Requirements</a> of this PP-Module are allowed to be omitted.</p>
 </div>
 <div class="admonitionblock guidance">
 <table>
@@ -878,21 +810,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 </tr>
 </table>
-</div>
-<div class="sect2">
-<h3 id="_components_allowed_with_this_cpp_in_a_pp_configuration">2.1. Components allowed with this cPP in a PP-Configuration</h3>
-<div class="paragraph">
-<p>The list of packages, PP-Modules and cPPs that may be used in conjunction with this cPP can be found at: <a href="https://coffeemaker.github.io/PP-config.html" class="bare">https://coffeemaker.github.io/PP-config.html</a></p>
-</div>
-<div class="paragraph">
-<p>The packages to which exact conformance can be claimed in conjunction with this PP are specified in the Allowed Packages list.</p>
-</div>
-<div class="paragraph">
-<p>PP-Modules that are allowed to specify this cPP as a base PP are specified in the Base PP list.</p>
-</div>
-<div class="paragraph">
-<p>Other cPPs that are allowed to be included in a PP-Configuration along with this cPP are specified in the Other cPP list.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1025,10 +942,10 @@ The following conventions are used for the completion of operations:</p>
 <li>
 <p>Number in parentheses after SFR name, e.g. (1) indicates the completion of an iteration.</p>
 </li>
-<li>
-<p>Extended SFRs are identified by having a label “EXT” at the end of the SFR name.</p>
-</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Extended SFRs are identified by having a label “EXT” at the end of the SFR name.</p>
 </div>
 <div class="admonitionblock guidance">
 <table>
@@ -1038,7 +955,7 @@ The following conventions are used for the completion of operations:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The following sections have been included from CC Part 2 just as reference. Include only those classes in 5.2 - 5.12 for which the TOE will need to comply with one or more SFRs from that class. Any sections that do not have applicable SFRs can be removed.</p>
+<p>The following sections have been included from CC Part 2 just as reference. Each section will have to be filled out. If the class isn&#8217;t needed it can be removed.</p>
 </div>
 </td>
 </tr>
@@ -1109,250 +1026,7 @@ The following conventions are used for the completion of operations:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>The <a href="#_security_objectives">Security Objectives</a> for the TOE were constructed to address <a href="#threats">[threats]</a> identified in the <a href="#_security_problem_definition">Security Problem Definition</a>. The <a href="#_security_functional_requirements">Security Functional Requirements</a> are a formal instantiation of the <a href="#_security_objectives">Security Objectives</a>. This cPP identifies the Security Assurance Requirements to frame the extent to which the evaluator assesses the documentation applicable for the evaluation and performs independent testing.</p>
-</div>
-<div class="paragraph">
-<p>This section lists the set of SARs from CC part 3 that are required in evaluations against this cPP. Individual Evaluation Activities to be performed are specified in <a href="#SD">[SD]</a>.</p>
-</div>
-<div class="paragraph">
-<p>The general model for evaluation of TOEs against STs written to conform to this cPP is as follows:</p>
-</div>
-<div class="paragraph">
-<p>After the ST has been approved for evaluation, the ITSEF will obtain the TOE, supporting environmental IT (if required), and the administrative/user guides for the TOE. The ITSEF is expected to perform actions mandated by the Common Evaluation Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the Evaluation Activities contained within the SD, which are intended to be an interpretation of the other CEM assurance requirements as they apply to the specific technology instantiated in the TOE. The Evaluation Activities that are captured in the SD also provide clarification as to what the developer needs to provide to demonstrate the TOE is compliant with the cPP.</p>
-</div>
-<div class="admonitionblock review">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-review" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If the iTC decides to go above EAL1 requirements then this table (and the associated SARs) will need to be modified. If not, then this is boilerplate and can be left alone.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Security Assurance Requirements</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assurance Class</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Assurance Components</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle" rowspan="7"><p class="tableblock">Security Target (ASE)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Conformance Claims (ASE_CCL.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extended components definition (ASE_ECD.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ST introduction (ASE_INT.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Security objectives for the operational environment (ASE_OBJ.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stated security requirements (ASE_REQ.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Security Problem Definition (ASE_SPD.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TOE summary specification (ASE_TSS.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Development (ADV)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Basic functional specification (ADV_FSP.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock">Guidance documents (AGD)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Operational user guidance (AGD_OPE.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preparative procedures (AGD_PRE.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock">Life cycle support (ALC)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Labeling of the TOE (ALC_CMC.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TOE CM coverage (ALC_CMS.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tests (ATE)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Independent testing – sample (ATE_IND.1)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vulnerability assessment (AVA)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vulnerability survey (AVA_VAN.1)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="_ase_security_target">6.1. ASE: Security Target</h3>
-<div class="admonitionblock boilerplate">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-boilerplate" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This section is boilerplate except for the guidance noted here</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The ST is evaluated as per ASE activities defined in the <a href="#CEM">[CEM]</a>. In addition, there may be Evaluation Activities specified within the <a href="#SD">[SD]</a> that call for necessary descriptions to be included in the TSS that are specific to the TOE technology type.</p>
-</div>
-<div class="admonitionblock guidance">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-guidance" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>As an option, the cPP may express a need for a more detailed description of how a TOE satisfies one or more SFRs. The level of detail required by the SD may include proprietary information, or simply information that should not be made public (i.e., provides attackers insight into the operation of the TOE that may increase the likelihood of a successful attack against the product). This information could be submitted as an appendix to the ST or as a separate document. The required information may take the form of a refinement as shown below, and the associated Evaluation Activity would be specified in the SD.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock boilerplate">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-boilerplate" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>As long as you are doing EAL1, none of these sections until you get to AVA_VAN.1 will need to be modified.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_adv_development">6.2. ADV: Development</h3>
-<div class="paragraph">
-<p>The design information about the TOE is contained in the guidance documentation available to the end user as well as the TSS portion of the ST, and any additional information required by this cPP that is not to be made public (e.g., Entropy Report).</p>
-</div>
-<div class="sect3">
-<h4 id="_basic_functional_specification_adv_fsp_1">6.2.1. Basic Functional Specification (ADV_FSP.1)</h4>
-<div class="paragraph">
-<p>The functional specification describes the TOE Security Functions Interfaces (TSFIs). It is not necessary to have a formal or complete specification of these interfaces. Additionally, because TOEs conforming to this cPP will necessarily have interfaces to the Operational Environment that are not directly invokable by TOE users, there is little point specifying that such interfaces be described in and of themselves since only indirect testing of such interfaces may be possible. For this cPP, the Evaluation Activities for this family focus on understanding the interfaces presented in the TSS in response to the functional requirements and the interfaces presented in the AGD documentation. No additional “functional specification” documentation is necessary to satisfy the Evaluation Activities specified in <a href="#SD">[SD]</a>.</p>
-</div>
-<div class="paragraph">
-<p>The Evaluation Activities in <a href="#SD">[SD]</a> are associated with the applicable SFRs; since these are directly associated with the SFRs, the tracing in element ADV_FSP.1.2D is implicitly already done and no additional documentation is necessary.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_agd_guidance_documentation">6.3. AGD: Guidance Documentation</h3>
-<div class="paragraph">
-<p>The guidance documents will be provided with the ST. Guidance must include a description of how the IT personnel verifies that the Operational Environment can fulfill its role for the security functionality. The documentation should be in an informal style and readable by the IT personnel.</p>
-</div>
-<div class="paragraph">
-<p>Guidance must be provided for every operational environment that the product supports as claimed in the ST. This guidance includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>instructions to successfully install the TSF in that environment; and</p>
-</li>
-<li>
-<p>instructions to manage the security of the TSF as a product and as a component of the larger operational environment; and</p>
-</li>
-<li>
-<p>instructions to provide a protected administrative capability.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Guidance pertaining to particular security functionality must also be provided; requirements on such guidance are contained in the Evaluation Activities specified in the <a href="#SD">[SD]</a>.</p>
-</div>
-<div class="sect3">
-<h4 id="_operational_user_guidance_agd_ope_1">6.3.1. Operational User Guidance (AGD_OPE.1)</h4>
-<div class="paragraph">
-<p>The operational user guidance does not have to be contained in a single document. Guidance to users, administrators and application developers can be spread among documents or web pages.</p>
-</div>
-<div class="paragraph">
-<p>The developer should review the Evaluation Activities contained in the <a href="#SD">[SD]</a> to ascertain the specifics of the guidance that the evaluator will be checking for. This will provide the necessary information for the preparation of acceptable guidance.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_preparative_procedures_agd_pre_1">6.3.2. Preparative Procedures (AGD_PRE.1)</h4>
-<div class="paragraph">
-<p>As with the operational guidance, the developer should look to the Evaluation Activities to determine the required content with respect to preparative procedures.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_class_alc_life_cycle_support">6.4. Class ALC: Life-cycle Support</h3>
-<div class="paragraph">
-<p>At the assurance level provided for TOEs conformant to this cPP, life-cycle support is limited to end-user-visible aspects of the life-cycle, rather than an examination of the TOE vendor’s development and configuration management process. This is not meant to diminish the critical role that a developer’s practices play in contributing to the overall trustworthiness of a product; rather, it is a reflection on the information to be made available for evaluation at this assurance level.</p>
-</div>
-<div class="sect3">
-<h4 id="_labelling_of_the_toe_alc_cmc_1">6.4.1. Labelling of the TOE (ALC_CMC.1)</h4>
-<div class="paragraph">
-<p>This component is targeted at identifying the TOE such that it can be distinguished from other products or versions from the same vendor and can be easily specified when being procured by an end user.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_toe_cm_coverage_alc_cms_1">6.4.2. TOE CM Coverage (ALC_CMS.1)</h4>
-<div class="paragraph">
-<p>Given the scope of the TOE and its associated evaluation evidence requirements, the evaluator performs the CEM work units associated with ALC_CMC.1.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_class_ate_tests">6.5. Class ATE: Tests</h3>
-<div class="paragraph">
-<p>Testing is specified for functional aspects of the system as well as aspects that take advantage of design or implementation weaknesses. The former is done through the ATE_IND family, while the latter is through the AVA_VAN family. For this cPP, testing is based on advertised functionality and interfaces with dependency on the availability of design information. One of the primary outputs of the evaluation process is the test report as specified in the following requirements.</p>
-</div>
-<div class="sect3">
-<h4 id="_independent_testing_conformance_ate_ind_1">6.5.1. Independent Testing – Conformance (ATE_IND.1)</h4>
-<div class="paragraph">
-<p>Testing is performed to confirm the functionality described in the TSS as well as the operational guidance (includes “evaluated configuration” instructions). The focus of the testing is to confirm that the requirements specified in Section 5 are being met. The Evaluation Activities in the SD identify the specific testing activities necessary to verify compliance with the SFRs. The evaluator produces a test report documenting the plan for and results of testing, as well as coverage arguments focused on the platform/TOE combinations that are claiming conformance to this cPP.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_class_ava_vulnerability_assessment">6.6. Class AVA: Vulnerability Assessment</h3>
-<div class="admonitionblock review">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-review" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>AVA is a difficult subject. This is taken from the NDcPP v2.1 as an example, but will need to be determined by the iTC.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>For the first generation of this cPP, the iTC is expected to survey open sources to discover what vulnerabilities have been discovered in these types of products and provide that content into the AVA_VAN discussion. In most cases, these vulnerabilities will require sophistication beyond that of a basic attacker. This information will be used in the development of future protection profiles.</p>
-</div>
-<div class="sect3">
-<h4 id="_vulnerability_survey_ava_van_1">6.6.1. Vulnerability Survey (AVA_VAN.1)</h4>
-<div class="paragraph">
-<p><a href="#SD">[SD]</a> provides a guide to the evaluator in performing a vulnerability analysis.</p>
-</div>
-</div>
+<p>This PP-Module does not define any additional assurance requirements above and beyond what is defined in the Service Center Protection Profile that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.</p>
 </div>
 </div>
 </div>
@@ -1410,13 +1084,13 @@ The following conventions are used for the completion of operations:</p>
 </table>
 </div>
 <div class="paragraph">
-<p>As indicated in the introduction to this cPP, the baseline requirements (those that shall be performed by the TOE) are contained in <a href="#_security_functional_requirements">Security Functional Requirements</a>. Additionally, there are two other types of requirements specified in <a href="#_consistency_rationale">Consistency Rationale</a> and <a href="#_selection_based_requirements">Selection-Based Requirements</a>.</p>
+<p>As indicated in the introduction to this PP-Module, the baseline requirements (those that shall be performed by the TOE) are contained in <a href="#_security_functional_requirements">Security Functional Requirements</a>. Additionally, there are two other types of requirements specified in <a href="#_consistency_rationale">Consistency Rationale</a> and <a href="#_selection_based_requirements">Selection-Based Requirements</a>.</p>
 </div>
 <div class="paragraph">
-<p>The first type (in this chapter) comprises requirements based on selections in other SFRs from the cPP: if certain selections are made, then additional requirements in this chapter will need to be included in the body of the ST.</p>
+<p>The first type (in this chapter) comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this chapter will need to be included in the body of the ST.</p>
 </div>
 <div class="paragraph">
-<p>The second type (in this chapter) comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this cPP.</p>
+<p>The second type (in this chapter) comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.</p>
 </div>
 <div class="admonitionblock review">
 <table>
@@ -1438,7 +1112,7 @@ The following conventions are used for the completion of operations:</p>
 <h2 id="_extended_component_definitions">Appendix C: Extended Component Definitions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This appendix contains the definitions for the extended requirements that are used in the cPP, including those used in <a href="#_consistency_rationale">Consistency Rationale</a> and <a href="#_selection_based_requirements">Selection-Based Requirements</a> .</p>
+<p>This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <a href="#_consistency_rationale">Consistency Rationale</a> and <a href="#_selection_based_requirements">Selection-Based Requirements</a> .</p>
 </div>
 <div class="paragraph">
 <p>(Note: formatting conventions for selections and assignments in this chapter are those in <a href="#CC2">[CC2]</a>.)</p>
@@ -1466,9 +1140,6 @@ The following conventions are used for the completion of operations:</p>
 <td class="content">
 <div class="paragraph">
 <p>The entire FIA_MBE_EXT section here is a complete example of an Extended Component Definition. Note the ditaa diagram showing the component levelling. This is a required feature of the ECD and needs to be included for all components.</p>
-</div>
-<div class="paragraph">
-<p>If extended components are being defined, all sections within the example must be filled out for each requirement.</p>
 </div>
 </td>
 </tr>
@@ -1673,104 +1344,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_key_management_document">Appendix E: Key Management Document</h2>
-<div class="sectionbody">
-<div class="admonitionblock guidance">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-guidance" title=""></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This section can be included to cover information that should not be publically released but which needs to be included in the documentation that is evaluated. In some cases this has been handled by public and proprietary versions of the ST (specifically the TSS), but this information can also be covered in a separate document.</p>
-</div>
-<div class="paragraph">
-<p>This is not always necessary and depends on the product type. The name of the document can be edited to be appropriate for the iTC, but the purpose is to cover information that would normally be marked as proprietary by a vendor.</p>
-</div>
-<div class="paragraph">
-<p>The following section has been copied from the current File Encryption PP-Module by NIAP.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The documentation of the product’s encryption key management should be detailed enough that, after reading, the evaluator will thoroughly understand the product’s key management and how it meets the requirements to ensure the keys are adequately protected. This documentation should include an essay and diagram(s). This documentation is not required to be part of the TSS - it can be submitted as a separate document and marked as developer proprietary.</p>
-</div>
-<div class="sect2">
-<h3 id="_key_management_description">E.1. Key Management Description</h3>
-<div class="paragraph">
-<p>The description will provide the following information for all keys in the key chain:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The purpose of the key</p>
-</li>
-<li>
-<p>If the key is stored in non-volatile memory</p>
-</li>
-<li>
-<p>How and when the key is protected</p>
-</li>
-<li>
-<p>How and when the key is derived</p>
-</li>
-<li>
-<p>The strength of the key</p>
-</li>
-<li>
-<p>When or if the key would be no longer needed, along with a justification</p>
-</li>
-<li>
-<p>How and when the key may be shared</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The description will also describe the following topics:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A description of all authorization factors that are supported by the product and how each factor is handled, including any conditioning and combining performed.</p>
-</li>
-<li>
-<p>If validation is implemented, the process for validation shall be described, noting what value is used for validation and the process used to perform the validation. It shall describe how this process ensures no keys in the key chain are weakened or exposed by this process.</p>
-</li>
-<li>
-<p>The authorization process that leads to the decryption of the FEK(s). This section shall detail the key chain used by the product. It shall describe which keys are used in the protection of the FEK(s) and how they meet the encryption or derivation requirements including the direct chain from the initial authorization to the FEK(s). It shall also include any values that add into that key chain or interact with the key chain and the protections that ensure those values do not weaken or expose the overall strength of the key chain.</p>
-</li>
-<li>
-<p>The diagram and essay will clearly illustrate the key hierarchy to ensure that at no point the chain could be broken without a cryptographic exhaust or all of the initial authorization values and the effective strength of the FEK(s) is maintained throughout the key chain.</p>
-</li>
-<li>
-<p>A description of the data encryption engine, its components, and details about its implementation (e.g. initialization of the product, drivers, libraries (if applicable), logical interfaces for encryption/decryption, and how resources to be encrypted are identified. The description should also include the data flow from the device’s host interface to the device’s persistent media storing the data, information on those conditions in which the data bypasses the data encryption engine. The description should be detailed enough to verify all platforms ensure that when the user enables encryption, the product encrypts all selected resources.</p>
-</li>
-<li>
-<p>The process for destroying keys when they are no longer needed by describing the storage location of all keys and the protection of all keys stored in non-volatile memory.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_key_management_diagram">E.2. Key Management Diagram:</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>The diagram will include all keys from the initial authorization factor(s) to the FEK(s) and any keys or values that contribute into the chain. It must list the cryptographic strength of each key and indicate how each key along the chain is protected with either options from key chaining requirement. The diagram should indicate the input used to derive or decrypt each key in the chain.</p>
-</li>
-<li>
-<p>A functional (block) diagram showing the main components (such as memories and processors) the initial steps needed for the activities the TOE performs to ensure it encrypts the targeted resources when a user or administrator first provisions the product.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_consistency_rationale">Appendix F: Consistency Rationale</h2>
+<h2 id="_consistency_rationale">Appendix E: Consistency Rationale</h2>
 <div class="sectionbody">
 <div class="admonitionblock review">
 <table>
@@ -1787,7 +1361,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Consistency Rationale for threats and OSPs</caption>
+<caption class="title">Table 3. Consistency Rationale for threats and OSPs</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1806,7 +1380,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Consistency Rationale for Assumptions</caption>
+<caption class="title">Table 4. Consistency Rationale for Assumptions</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1825,12 +1399,12 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_consistency_of_objectives">F.1. Consistency of Objectives</h3>
+<h3 id="_consistency_of_objectives">E.1. Consistency of Objectives</h3>
 <div class="paragraph">
 <p>The objectives for the biometric system and its operational environment are consistent with the <a href="#MDFPP">[MDFPP]</a> based on the following rationale:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Consistency Rationale for TOE Objectives</caption>
+<caption class="title">Table 5. Consistency Rationale for TOE Objectives</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1849,7 +1423,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Consistency Rationale for Environmental Objectives</caption>
+<caption class="title">Table 6. Consistency Rationale for Environmental Objectives</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1869,13 +1443,13 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_consistency_of_requirements">F.2. Consistency of Requirements</h3>
+<h3 id="_consistency_of_requirements">E.2. Consistency of Requirements</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sfr_list">Appendix G: SFR List</h2>
+<h2 id="_sfr_list">Appendix F: SFR List</h2>
 <div class="sectionbody">
 <div class="admonitionblock guidance">
 <table>
@@ -1892,7 +1466,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>This table is provided as a reference of all SFRs included in this cPP.</p>
+<p>This table is provided as a reference of all SFRs included in this PP-Module.</p>
 </div>
 <div class="paragraph">
 <p>The Type column has the following definitions:</p>
@@ -1914,7 +1488,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </dl>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Security Functional Requirements</caption>
+<caption class="title">Table 7. Security Functional Requirements</caption>
 <colgroup>
 <col style="width: 28.5714%;">
 <col style="width: 57.1428%;">
@@ -1986,7 +1560,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossary">Appendix H: Glossary</h2>
+<h2 id="_glossary">Appendix G: Glossary</h2>
 <div class="sectionbody">
 <div class="admonitionblock review">
 <table>
@@ -2016,10 +1590,10 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_acronyms">Appendix I: Acronyms</h2>
+<h2 id="_acronyms">Appendix H: Acronyms</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Acronyms</caption>
+<caption class="title">Table 8. Acronyms</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -2047,7 +1621,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.2<br>
-Last updated 2019-08-26 14:15:57 -0400
+Last updated 2019-08-26 14:39:20 -0400
 </div>
 </div>
 </body>
