@@ -546,15 +546,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_health_testing">D.4. Health Testing</a></li>
 </ul>
 </li>
-<li><a href="#_consistency_rationale">Appendix E: Consistency Rationale</a>
+<li><a href="#_key_management_document">Appendix E: Key Management Document</a>
 <ul class="sectlevel2">
-<li><a href="#_consistency_of_objectives">E.1. Consistency of Objectives</a></li>
-<li><a href="#_consistency_of_requirements">E.2. Consistency of Requirements</a></li>
+<li><a href="#_key_management_description">E.1. Key Management Description</a></li>
+<li><a href="#_key_management_diagram">E.2. Key Management Diagram:</a></li>
 </ul>
 </li>
-<li><a href="#_sfr_list">Appendix F: SFR List</a></li>
-<li><a href="#_glossary">Appendix G: Glossary</a></li>
-<li><a href="#_acronyms">Appendix H: Acronyms</a></li>
+<li><a href="#_consistency_rationale">Appendix F: Consistency Rationale</a>
+<ul class="sectlevel2">
+<li><a href="#_consistency_of_objectives">F.1. Consistency of Objectives</a></li>
+<li><a href="#_consistency_of_requirements">F.2. Consistency of Requirements</a></li>
+</ul>
+</li>
+<li><a href="#_sfr_list">Appendix G: SFR List</a></li>
+<li><a href="#_glossary">Appendix H: Glossary</a></li>
+<li><a href="#_acronyms">Appendix I: Acronyms</a></li>
 </ul>
 </div>
 </div>
@@ -656,19 +662,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="_related_documents">Related Documents</h3>
+<div class="admonitionblock review">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-review" title=""></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Edit the Supporting Document in the list.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist bibliography">
 <ul class="bibliography">
 <li>
-<p><span id="CC1">[CC1]</span>	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.</p>
+<p><span id="CC1">[CC1]</span> Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
 <p><span id="CC2">[CC2]</span> Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
-<p><span id="CC3">[CC3]</span>	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.</p>
+<p><span id="CC3">[CC3]</span> Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.</p>
 </li>
 <li>
-<p><span id="CEM">[CEM]</span>	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.</p>
+<p><span id="CEM">[CEM]</span> Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.</p>
+</li>
+<li>
+<p><span id="SD">[SD]</span> Supporting Document</p>
 </li>
 </ul>
 </div>
@@ -955,7 +978,7 @@ The following conventions are used for the completion of operations:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The following sections have been included from CC Part 2 just as reference. Each section will have to be filled out. If the class isn&#8217;t needed it can be removed.</p>
+<p>The following sections have been included from CC Part 2 just as reference. Include only those classes in 5.2 - 5.12 for which the TOE will need to comply with one or more SFRs from that class. Any sections that do not have applicable SFRs can be removed.</p>
 </div>
 </td>
 </tr>
@@ -1140,6 +1163,9 @@ The following conventions are used for the completion of operations:</p>
 <td class="content">
 <div class="paragraph">
 <p>The entire FIA_MBE_EXT section here is a complete example of an Extended Component Definition. Note the ditaa diagram showing the component levelling. This is a required feature of the ECD and needs to be included for all components.</p>
+</div>
+<div class="paragraph">
+<p>If extended components are being defined, all sections within the example must be filled out for each requirement.</p>
 </div>
 </td>
 </tr>
@@ -1344,7 +1370,104 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_consistency_rationale">Appendix E: Consistency Rationale</h2>
+<h2 id="_key_management_document">Appendix E: Key Management Document</h2>
+<div class="sectionbody">
+<div class="admonitionblock guidance">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-guidance" title=""></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This section can be included to cover information that should not be publically released but which needs to be included in the documentation that is evaluated. In some cases this has been handled by public and proprietary versions of the ST (specifically the TSS), but this information can also be covered in a separate document.</p>
+</div>
+<div class="paragraph">
+<p>This is not always necessary and depends on the product type. The name of the document can be edited to be appropriate for the iTC, but the purpose is to cover information that would normally be marked as proprietary by a vendor.</p>
+</div>
+<div class="paragraph">
+<p>The following section has been copied from the current File Encryption PP-Module by NIAP.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The documentation of the product’s encryption key management should be detailed enough that, after reading, the evaluator will thoroughly understand the product’s key management and how it meets the requirements to ensure the keys are adequately protected. This documentation should include an essay and diagram(s). This documentation is not required to be part of the TSS - it can be submitted as a separate document and marked as developer proprietary.</p>
+</div>
+<div class="sect2">
+<h3 id="_key_management_description">E.1. Key Management Description</h3>
+<div class="paragraph">
+<p>The description will provide the following information for all keys in the key chain:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The purpose of the key</p>
+</li>
+<li>
+<p>If the key is stored in non-volatile memory</p>
+</li>
+<li>
+<p>How and when the key is protected</p>
+</li>
+<li>
+<p>How and when the key is derived</p>
+</li>
+<li>
+<p>The strength of the key</p>
+</li>
+<li>
+<p>When or if the key would be no longer needed, along with a justification</p>
+</li>
+<li>
+<p>How and when the key may be shared</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The description will also describe the following topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A description of all authorization factors that are supported by the product and how each factor is handled, including any conditioning and combining performed.</p>
+</li>
+<li>
+<p>If validation is implemented, the process for validation shall be described, noting what value is used for validation and the process used to perform the validation. It shall describe how this process ensures no keys in the key chain are weakened or exposed by this process.</p>
+</li>
+<li>
+<p>The authorization process that leads to the decryption of the FEK(s). This section shall detail the key chain used by the product. It shall describe which keys are used in the protection of the FEK(s) and how they meet the encryption or derivation requirements including the direct chain from the initial authorization to the FEK(s). It shall also include any values that add into that key chain or interact with the key chain and the protections that ensure those values do not weaken or expose the overall strength of the key chain.</p>
+</li>
+<li>
+<p>The diagram and essay will clearly illustrate the key hierarchy to ensure that at no point the chain could be broken without a cryptographic exhaust or all of the initial authorization values and the effective strength of the FEK(s) is maintained throughout the key chain.</p>
+</li>
+<li>
+<p>A description of the data encryption engine, its components, and details about its implementation (e.g. initialization of the product, drivers, libraries (if applicable), logical interfaces for encryption/decryption, and how resources to be encrypted are identified. The description should also include the data flow from the device’s host interface to the device’s persistent media storing the data, information on those conditions in which the data bypasses the data encryption engine. The description should be detailed enough to verify all platforms ensure that when the user enables encryption, the product encrypts all selected resources.</p>
+</li>
+<li>
+<p>The process for destroying keys when they are no longer needed by describing the storage location of all keys and the protection of all keys stored in non-volatile memory.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_management_diagram">E.2. Key Management Diagram:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The diagram will include all keys from the initial authorization factor(s) to the FEK(s) and any keys or values that contribute into the chain. It must list the cryptographic strength of each key and indicate how each key along the chain is protected with either options from key chaining requirement. The diagram should indicate the input used to derive or decrypt each key in the chain.</p>
+</li>
+<li>
+<p>A functional (block) diagram showing the main components (such as memories and processors) the initial steps needed for the activities the TOE performs to ensure it encrypts the targeted resources when a user or administrator first provisions the product.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_consistency_rationale">Appendix F: Consistency Rationale</h2>
 <div class="sectionbody">
 <div class="admonitionblock review">
 <table>
@@ -1399,7 +1522,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_consistency_of_objectives">E.1. Consistency of Objectives</h3>
+<h3 id="_consistency_of_objectives">F.1. Consistency of Objectives</h3>
 <div class="paragraph">
 <p>The objectives for the biometric system and its operational environment are consistent with the <a href="#MDFPP">[MDFPP]</a> based on the following rationale:</p>
 </div>
@@ -1443,13 +1566,13 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_consistency_of_requirements">E.2. Consistency of Requirements</h3>
+<h3 id="_consistency_of_requirements">F.2. Consistency of Requirements</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_sfr_list">Appendix F: SFR List</h2>
+<h2 id="_sfr_list">Appendix G: SFR List</h2>
 <div class="sectionbody">
 <div class="admonitionblock guidance">
 <table>
@@ -1560,7 +1683,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossary">Appendix G: Glossary</h2>
+<h2 id="_glossary">Appendix H: Glossary</h2>
 <div class="sectionbody">
 <div class="admonitionblock review">
 <table>
@@ -1590,7 +1713,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_acronyms">Appendix H: Acronyms</h2>
+<h2 id="_acronyms">Appendix I: Acronyms</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 8. Acronyms</caption>
@@ -1621,7 +1744,7 @@ in the entropy source design. Diagrams and examples are encouraged.</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.2<br>
-Last updated 2019-08-26 14:39:20 -0400
+Last updated 2019-08-26 14:45:55 -0400
 </div>
 </div>
 </body>
