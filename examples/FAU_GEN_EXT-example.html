@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>iTC Advanced User Guide for GitHub Offline</title>
+<title>FAU_GEN_EXT Example</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,7 +435,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .admonitionblock td.icon .icon-boilerplate:before {content:"\f023";color:#3F903E;}
 </style>
@@ -448,358 +447,183 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>iTC Advanced User Guide for GitHub Offline</h1>
+<h1>FAU_GEN_EXT Example</h1>
 <div class="details">
 <span id="revnumber">version 0.1,</span>
-<span id="revdate">2019-08-14</span>
+<span id="revdate">2019-08-27</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_audience">Audience</a></li>
-<li><a href="#_resources">Resources</a></li>
-<li><a href="#_using_github_with_a_client">1. Using GitHub with a Client</a></li>
-<li><a href="#_github_clients">2. GitHub Clients</a></li>
-<li><a href="#_github_desktop_client">3. GitHub Desktop Client</a>
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_extended_component_definitions">Extended Component Definitions</a>
 <ul class="sectlevel2">
-<li><a href="#_setup">3.1. Setup</a></li>
-<li><a href="#_adding_cloning_repositories_to_the_client">3.2. Adding (Cloning) Repositories to the Client</a></li>
-<li><a href="#_working_with_local_repositories">3.3. Working With Local Repositories</a>
+<li><a href="#_security_audit_fau">Security Audit (FAU)</a>
 <ul class="sectlevel3">
-<li><a href="#_working_in_branches">3.3.1. Working in Branches</a></li>
-<li><a href="#_switching_between_branches">3.3.2. Switching Between Branches</a>
+<li><a href="#_security_audit_data_generation_fau_gen_ext">Security Audit Data Generation (FAU_GEN_EXT)</a>
 <ul class="sectlevel4">
-<li><a href="#_working_in_a_pull_request_branch">3.3.2.1. Working in a Pull Request Branch</a></li>
+<li><a href="#_family_behaviour">Family Behaviour</a></li>
+<li><a href="#_component_levelling">Component levelling</a></li>
+<li><a href="#_management_fau_gen_ext_1">Management: FAU_GEN_EXT.1</a></li>
+<li><a href="#_audit_fau_gen_ext_1">Audit: FAU_GEN_EXT.1</a></li>
+<li><a href="#_fau_gen_ext_1_security_audit_data_generation_for_distributed_toe_components">FAU_GEN_EXT.1 Security Audit Data Generation for Distributed TOE Components</a></li>
 </ul>
 </li>
-<li><a href="#_reviewing_branch_changes">3.3.3. Reviewing Branch Changes</a></li>
-<li><a href="#_keeping_branches_up_to_date">3.3.4. Keeping Branches Up to Date</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_local_editing_with_asciidoctor">4. Local Editing with Asciidoctor</a>
+<li><a href="#_evaluation_activities">Evaluation Activities</a>
 <ul class="sectlevel2">
-<li><a href="#_recommended_editor_from_brian_wood">4.1. Recommended Editor (from Brian Wood)</a></li>
-<li><a href="#_ascii_diagrams">4.2. Ascii Diagrams</a></li>
+<li><a href="#_ea_for_fau_gen_ext_1_security_audit_data_generation_for_distributed_toe_components">EA for FAU_GEN_EXT.1 Security Audit Data Generation for Distributed TOE Components</a>
+<ul class="sectlevel3">
+<li><a href="#_tss">TSS</a></li>
+<li><a href="#_guidance_documentation">Guidance Documentation</a></li>
+<li><a href="#_tests">Tests</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch main-menu">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./index.html">User Guide Home</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./userguide.html">User Guide for GitHub</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./AdvancedUser.html">Advanced User Guide</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/GitHubClients.html">GitHub Clients</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/GitHubTraining.html">GitHub Training</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_audience">Audience</h2>
+<h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is designed for a user who will be doing more heavy editing of documents within the iTC.</p>
+<p>This is an example of FAU_GEN_EXT taken from the collaborative Protection Profile for
+Network Devices created by the Network Devices iTC.</p>
 </div>
 <div class="paragraph">
-<p>This document intends to communicate to iTC users information regarding the selection of clients to interact with GitHub and some of the workflow considerations when working offline (as opposed to online via web browser). This guide builds on the information in the iTC User Guide for GitHub.</p>
-</div>
-<div class="paragraph">
-<p>The expectation for any user reading this guide is that they are already familiar with GitHub or have at least read the iTC User Guidance for GitHub and understand the process for creating Pull Requests within the web interface.</p>
+<p>It is important to note that this is for an entire family of requirements. A set of requirements like this can be split between mandatory and selection-based or optional requirements, and so may not be in a single block in the cPP (by convention).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_resources">Resources</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a id="clients"></a><a href="/admin-guide/GitHubClients.html">GitHub Clients Overview</a></p>
-</li>
-<li>
-<p><a href="/admin-guide/GitHubTraining.html">GitHub Training References</a></p>
-</li>
-<li>
-<p><a id="userguide"></a><a href="/user-guide/UserGuide.html">iTC User Guidance for GitHub</a></p>
-</li>
-<li>
-<p><a href="https://desktop.github.com/">GitHub Desktop</a></p>
-</li>
-<li>
-<p><a href="https://help.github.com/en/desktop">GitHub Desktop Documentation</a></p>
-</li>
-<li>
-<p><a id="editors"></a><a href="https://asciidoctor.org/docs/editing-asciidoc-with-live-preview/">Asciidoctor Editors with Live Preview</a></p>
-</li>
-<li>
-<p><a id="adfx"></a><a href="https://www.asciidocfx.com/">AsciiDocFX</a></p>
-</li>
-<li>
-<p><a id="ditaa"></a><a href="http://ditaa.sourceforge.net/">ditaa</a></p>
-</li>
-<li>
-<p><a id="JavE"></a><a href="http://www.jave.de/">JavE (Ascii diagrams)</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_using_github_with_a_client">1. Using GitHub with a Client</h2>
+<h2 id="_extended_component_definitions">Extended Component Definitions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Generally, GitHub clients focus on the process of creating Pull Requests within GitHub. Things like Issues are handled in the web interface (though you can still reference them in your comments about a Pull Request), but the primary (and in some cases only) purpose of the client is to manage the process of downloading the latest updates and uploading your edits.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>It is important to understand that a GitHub client is not an editor. Some clients may be able to link to an editor (so you can click on a file while inside the client and have it open up), but the client itself is specifically for managing the upload/download of code (in this case the iTC documentation).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>What the GitHub client will do is to allow you to download the files of the repository where you are working (such as the cPP repository), and then work on the files from your local computer (as opposed to using the browser). For this you can use any editor you like (see <a href="#editors">Asciidoctor Editors</a> for some suggestions). Once you have completed your edits and saved them, you can then upload them back to GitHub where they can be reviewed and eventually included in the final version.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_github_clients">2. GitHub Clients</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When working offline, you will need to have some sort of GitHub client to interact with the repository. There are many options, and a lot of them are free (some are more free than others), covering both GUI and CLI-based clients. The page <a href="#clients">GitHub Clients Overview</a> provides links to several different clients that can be used for managing your access with GitHub. None is really better than another, it all comes down to preference.</p>
-</div>
-<div class="paragraph">
-<p>Once you are familiar with how GitHub works, with Pull Requests and Merges, using any client is more about figuring out how that client presents those functions than it is how to do what GitHub needs.</p>
-</div>
-<div class="paragraph">
-<p>For the purposes of this document, the <a href="https://desktop.github.com/">GitHub Desktop</a> client will be used.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_github_desktop_client">3. GitHub Desktop Client</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_setup">3.1. Setup</h3>
-<div class="paragraph">
-<p>The configuration of the GitHub Desktop client can be found <a href="https://help.github.com/en/desktop/getting-started-with-github-desktop/setting-up-github-desktop">here</a>. This page describes all the steps necessary to install the client and to authenticate to your GitHub account.</p>
-</div>
+<p>This section is what would be placed in the Extended Component Definitions of the cPP (or PP-Module).</p>
 </div>
 <div class="sect2">
-<h3 id="_adding_cloning_repositories_to_the_client">3.2. Adding (Cloning) Repositories to the Client</h3>
-<div class="paragraph">
-<p>Within each GitHub organization you will have repositories where you do the work. While a repository in the web interface shows Issues, Pull Requests, the wiki and other options, in the client you are looking at the Code and Pull Requests sections only (it is possible some clients may provide more functionality, but not in the client we are looking at now).</p>
-</div>
-<div class="paragraph">
-<p>Accessing a repository will make it available to download to your computer. When you installed the client it would have asked you to specify a GitHub folder, and this will be where the files are downloaded (by default).</p>
-</div>
-<div class="paragraph">
-<p>The process of adding a repository is called cloning. The directions for cloning a repository can be found <a href="https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-desktop">here</a>. When you select GitHub.com you will see all the repositories you have access to (such as different iTCs, or different repositories within your iTC). Select the repository you want to access and where you want the files to download to (this will be your working directory).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_working_with_local_repositories">3.3. Working With Local Repositories</h3>
+<h3 id="_security_audit_fau">Security Audit (FAU)</h3>
 <div class="sect3">
-<h4 id="_working_in_branches">3.3.1. Working in Branches</h4>
+<h4 id="_security_audit_data_generation_fau_gen_ext">Security Audit Data Generation (FAU_GEN_EXT)</h4>
+<div class="sect4">
+<h5 id="_family_behaviour">Family Behaviour</h5>
 <div class="paragraph">
-<p>The first thing to remember when working offline is to consider the branch you are working in. There are 2 branches by default in the repository, Master and Working. When you are working offline or even online, generally you want to commit your changes to a new branch with a Pull Request. The Pull Request lets everyone in the iTC see the specific changes you have made to the existing document (or just see that it is new), and then to approve its inclusion into one of the main (usually Working) branches.</p>
+<p>This component defines the requirements for components in a distributed TOE to generate security audit data.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>While it may be possible to commit directly to the Working branch, this is not what you want to do as this can circumvent the process of approvals and can cause conflicts with other people working on the same document (in the same place). The purpose of using GitHub is to allow multiple editors at the same time, and the branch process is how this is managed.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>When you are going to begin work on your documents offline, the first step is to create your own branch to work in. This will let you work on your changes without impacting any other work until you are ready to upload them into a Pull Request.</p>
-</div>
-<div class="paragraph">
-<p>Any branch is based on an existing one. Generally this would be Working (i.e. when you create your new branch, it will use Working as the base for the changes), so your changes will be compared to what is the current status of the Working branch.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>It is possible to work on multiple separate branches at one time though this isn&#8217;t recommended. The way the client works, you always look at a single branch at a time. So if you move between branches, changes from one will not be reflected in another.</p>
-</div>
-<div class="paragraph">
-<p>For example, if you create a new file &lt;file1.adoc&gt; in branch 1 (based on working), and then start a new branch 2 (also based on Working), &lt;file1.adoc&gt; will not appear in branch 2 because both branches are based on the same original branch.</p>
-</div>
-<div class="paragraph">
-<p>It is possible to create new branches from something other than Working, and that can be useful (such as making an edit to another Pull Request), but generally you will perform all the work in a single branch at a time.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To create your new branch, follow the steps <a href="https://help.github.com/en/desktop/contributing-to-projects/creating-a-branch-for-your-work">here</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_switching_between_branches">3.3.2. Switching Between Branches</h4>
-<div class="paragraph">
-<p>While you are working on your branch changes, you may need to see work being done in another branch (i.e. a Pull Request) that has already been uploaded. The steps for switching can be found <a href="https://help.github.com/en/desktop/contributing-to-projects/switching-between-branches">here</a>.</p>
-</div>
-<div class="paragraph">
-<p>One of the main things to note when switching between branches is what happens to your changes. When you switch branches, you will be asked what you want to do with any changes you have already made. They can be brought to the new branch or to leave them in the existing branch. You should leave your changes in the existing branch, and GitHub Desktop will handle saving them and then showing you the new branch. When you switch back to your previous branch, the changes will be restored, or you will have the option to restore your stashed changes. This allows you to move around in the branches without losing your work.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The option to bring your changes to the new branch is very helpful in cases where you forget to start a new branch before you start editing. If you start working on a document and then remember to make a new branch, you can bring all the changes forward into the new branch this way.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="sect4">
-<h5 id="_working_in_a_pull_request_branch">3.3.2.1. Working in a Pull Request Branch</h5>
-<div class="paragraph">
-<p>Once someone has uploaded a new branch and created a Pull Request it is generally best to make edits for that branch from that branch. For example if branch3 was created to edit a file and a Pull Request was created for it, for you to make changes, you should switch to that branch and make the changes directly there. These will be shown in the Pull request separately and can be handled there, without needing to create additional branches.</p>
+<h5 id="_component_levelling">Component levelling</h5>
+<div id="img-FAU_GEN_EXT" class="imageblock">
+<div class="content">
+<img src="images/FAU_GEN_EXT.png.png" alt="FAU GEN EXT.png" width="640" height="126">
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_reviewing_branch_changes">3.3.3. Reviewing Branch Changes</h4>
-<div class="paragraph">
-<p>When you are ready to upload your changes to GitHub, you will be saving a commit (this is the term GitHub uses, and is based on a hash value of the changes).</p>
+<div class="title">Figure 1. Component levelling</div>
 </div>
 <div class="paragraph">
-<p>For more information about reviewing and committing changes to GitHub, go to <a href="https://help.github.com/en/desktop/contributing-to-projects/committing-and-reviewing-changes-to-your-project">here</a>.</p>
+<p>FAU_GEN_EXT.1 Security audit data shall be generated by all components in a distributed TOE</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_management_fau_gen_ext_1">Management: FAU_GEN_EXT.1</h5>
+<div class="paragraph">
+<p>The following actions could be considered for the management functions in FMT:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The TSF shall have the ability to configure the cryptographic functionality.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_audit_fau_gen_ext_1">Audit: FAU_GEN_EXT.1</h5>
+<div class="paragraph">
+<p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>No audit necessary</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_fau_gen_ext_1_security_audit_data_generation_for_distributed_toe_components">FAU_GEN_EXT.1 Security Audit Data Generation for Distributed TOE Components</h5>
+<div class="paragraph">
+<p>Hierarchical to: No other components</p>
 </div>
 <div class="paragraph">
-<p>Opening the GitHub Desktop (which should be on the branch you had created already) will show you a list of the changed files on the left side. In the right pane the changes of each file will be displayed (so you can take a quick overview of any edits). Files will be marked with symbols for new, modified or deleted files (green, yellow and red, respectively).</p>
+<p>Dependencies: No dependencies</p>
 </div>
 <div class="paragraph">
-<p>If for some reason you don&#8217;t want to include the changes to one of the files in the Pull Request, you can uncheck it before making the commit. If you decide you don&#8217;t want the changes at all, you can Discard them (this can be right with a right-click). Note that a Discard will actually delete all the changes, so be careful about using this option.</p>
+<p><strong>FAU_GEN_EXT.1.1</strong> The TSF shall be able to generate audit records for each TOE component. The audit records generated by the TSF of each TOE component shall include the subset of security relevant audit events which can occur on the TOE component.</p>
 </div>
-<div class="paragraph">
-<p>To commit your changes to GitHub, fill out a title and description in the lower-left corner. If this is a new Pull Request this is the content of the initial comment for the discussion, while if it is an update to an existing Pull Request it will be shown as part of the commit within that discussion.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Application Note 1</dt>
+<dd>
+<p>The TOE must be able to generate audit records for each TOE component. Some TOE components of a distributed TOE might not implement the complete TSF of the overall TOE but only a subset of the TSF. The audit records for each TOE component need to cover all security relevant audit events according to the subset of the TSF implemented by this particular TOE component but not necessarily all security relevant audit events according to the TSF of the overall TOE. If a security-relevant event can occur on multiple TOE components, it needs to cause generation of an audit record uniquely identifying the component associated with the event. The ST author shall identify for each TOE component which of the overall required audit events defined in FAU_GEN.1.1 are logged. The ST author may decide to do this by providing a corresponding table. The information provided needs to be in agreement with Table 1. The overall TOE needs to cover all auditable events listed in Table 2 (and Tables 4 and 5 as applicable to the overall TOE).</p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>You can use the @ (to reference other iTC members) and # (to reference Issues or Pull Requests) references as you can in the web interface (more information can be found in section 3 of the <a href="#userguide">iTC User Guidance for GitHub</a>. Once you have completed this and selected the file changes to include, click the Commit button.</p>
-</div>
-<div class="paragraph">
-<p>Once the commit has been created it needs to be pushed to GitHub. In the upper right hand corder (next to the branch menu) you will see "Push origin". Click this button to upload the changes to GitHub.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_keeping_branches_up_to_date">3.3.4. Keeping Branches Up to Date</h4>
-<div class="paragraph">
-<p>One important taks is making sure that you local branches are up to date. Most of this is handled automatically, but sometimes it may need to be done manually.</p>
-</div>
-<div class="paragraph">
-<p>When you have selected the branch you want to review, the button to the right of the branch menu will say Fetch origin. Clicking this button will tell the client to contact the server and make sure it has the latest copy of the specified branch. More information about this can be found <a href="https://help.github.com/en/desktop/contributing-to-projects/syncing-your-branch#update-your-local-branch">here</a>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_local_editing_with_asciidoctor">4. Local Editing with Asciidoctor</h2>
+<h2 id="_evaluation_activities">Evaluation Activities</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have the files for the repository downloaded locally, you need to find (or have?) something to edit them with. Now given that Asciidoctor is simple text, technically something as simple as Notepad is sufficient, but the reality is that if you are taking the time to download the files and work offline, you probably want something with more functionality. Using Notepad will only let you see the text and syntax you have added, not give you a WYSIWYG (Live Preview) version.</p>
-</div>
-<div class="paragraph">
-<p>The <a href="#editors">Asciidoctor Editors with Live Preview</a> page has a lot of options for a Live Preview environment for Asciidoctor files. Realize that none of these are quite like using Word where you are directly editing the rich output, but are in some form a dual display with the raw Asciidoctor text in one frame and the rich output in another.</p>
+<p>This section is what would be placed in the Evaluation Activities of the Supporting Document.</p>
 </div>
 <div class="sect2">
-<h3 id="_recommended_editor_from_brian_wood">4.1. Recommended Editor (from Brian Wood)</h3>
+<h3 id="_ea_for_fau_gen_ext_1_security_audit_data_generation_for_distributed_toe_components">EA for FAU_GEN_EXT.1 Security Audit Data Generation for Distributed TOE Components</h3>
 <div class="paragraph">
-<p>At this point, the editor I would most recommend, is <a href="#adfx">AsciiDocFX</a>. While a little slow (it is cross platform Java, so it can take a little time to start up), I generally have not had any problems with it running and doing what it is supposed to. It is also the easiest to setup as it has everything you need bundled into it whereas several of the others require installing an editor and then loading plugins to support the preview.</p>
+<p>For distributed TOEs, the requirements on TSS, Guidance Documentation and Tests regarding FAU_GEN_EXT.1 are already covered by the corresponding requirements for FAU_GEN.1.</p>
 </div>
+<div class="sect3">
+<h4 id="_tss">TSS</h4>
 <div class="paragraph">
-<p>AsciiDocFX provides a two-pane display with the raw Asciidoctor text on the left and a Live Preview on the right. You can open multiple files in tabs and there is a folder/file list on the left so you can find files to open (if you haven&#8217;t associated the files in Windows Explorer). There are also some help icons (things like bold text, headers, tables, etc.) that can be used to help out in formatting.</p>
-</div>
-<div class="paragraph">
-<p>Generally the two panes are kept in sync (not always perfect at the bottom of the page, but pretty good), and you can use the preview side to navigate to places in the text (i.e. you can scroll through the live preview side and then click on the section where you want to edit something and the raw page will navigate to that spot immediately).</p>
-</div>
-<div class="paragraph">
-<p>Atom and Brackets both seem to be pretty good editors, but I don&#8217;t find their preview to be quite as good, especially since the scrolling is not linked between the raw and preview panes. Note that Brackets does have a nice feature though where the preview window can be split out into a new window (as opposed to two panes in the same window), but I still find the lack of scroll sync to be a problem.</p>
+<p>The evaluator examines the TSS to confirm that it describes which TOE components store their security audit events locally and which send their security audit events to other TOE components for local storage. For the latter, the target TOE component(s) which store security audit events for other TOE components shall be identified. For every sending TOE component the corresponding receiving TOE component(s) need to be identified. For every transfer of audit information between TOE components it shall be described how the data is secured during transfer according to FTP_ITC.1 or FPT_ITT.1.</p>
 </div>
 <div class="paragraph">
-<p>A few notes about AsciiDocFX to be aware of:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The output tools that are built in are fine, but do not have the full features of the Asciidoctor toolchain, so "final" documents should not be produced from here. This especially includes things like the special admonition notes that have been added, they will not be displayed properly here (or in any of the Live Previews)</p>
-</li>
-<li>
-<p>Special admonitions will not be displayed properly (they will be shown in a box, but the marker for the icon will be ignored). They will still be shown in the final output if the Asciidoctor toolchain is used for building the docs</p>
-</li>
-<li>
-<p>It is possible to paste binary characters into this editor but they will not show up in the display (it will be a blank space on the screen). I did this several times and it caused the file to be registered as binary in GitHhub instead of text. I had to use a standard text editor (like Notepad) to find and remove the characters</p>
-</li>
-</ul>
+<p>For each TOE component which does not store audit events locally by itself, the evaluator confirms that the TSS describes how the audit information is buffered before sending to another TOE component for local storage.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_ascii_diagrams">4.2. Ascii Diagrams</h3>
+<div class="sect3">
+<h4 id="_guidance_documentation">Guidance Documentation</h4>
 <div class="paragraph">
-<p>While there will be times when a complex graphic just needs to be created in a graphics program, for flow charts and requirement hierarchies, it is possible to use <a href="#ditaa">[ditaa]</a> to create diagrams in text (Ascii art) and have them rendered into graphics in the final publication.</p>
+<p>The evaluator shall examine the guidance documentation to ensure that it describes how the link between different TOE components is established if audit data is exchanged between TOE components for local storage. The guidance documentation shall describe all possible configuration options for local storage of audit data and provide all instructions how to perform the related configuration of the TOE components.</p>
 </div>
 <div class="paragraph">
-<p>Ditaa is the recommended method for doing this, in large part because the setup is simple within Asciidoctor and also because it is simple to understand. Because you are using text to draw the diagram, it also means you can see exactly what you are doing within the text of the Asciidoctor document instead of needing to look up the graphic image. Using ditaa, when the HTML or PDF output is generated, the text is translated into a graphic image.</p>
+<p>The evaluator shall also ensure that the guidance documentation describes for every TOE component which does not store audit information locally how audit information is buffered before transmission to other TOE components.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tests">Tests</h4>
+<div class="paragraph">
+<p>For at least one of each type of distributed TOE components (sensors, central nodes, etc.), the following tests shall be performed using distributed TOEs.</p>
 </div>
 <div class="paragraph">
-<p>The biggest problem with any graphic is creating it, and Ascii diagrams can be particularly annoying since you are trying to line up the lines and text using spaces in within the document. To speed up this process, it is recommended to use <a href="#JavE">[JavE]</a> to help create the diagrams. Using JavE you can create diagrams in a more familiar way (like drawing boxes and lines with a mouse) and then copy the resulting output into your Asciidoctor document.</p>
+<p>Test 1: For each type of TOE component, the evaluator shall perform a representative subset of auditable actions and ensure that these actions cause the generation of appropriately formed audit records. Generation of such records can be observed directly on the distributed TOE component (if there is appropriate interface), or indirectly after transmission to a central location.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>After reviewing the ditaa site about diagrams, you may need to create a user defined box style to get the right corners. The standard + will create square corners, while you will need to use / or \ for rounded corners.</p>
+<p>Test 2: For each type of TOE component that, in the evaluated configuration, is capable of transmitting audit information to the external audit server (as specified in FTP_ITC.1), the evaluator shall configure a trusted channel and confirm that audit records generated as a result of actions taken by the evaluator are securely transmitted. It is sufficient to observe negotiation and establishment of the secure channel with the TOE component and the subsequent transmission of encrypted data to confirm this functionality. Alternatively, the following steps shall be performed: The evaluator induces audit record transmission, then reviews the packet capture around the time of transmission and verifies that no audit data is transmitted in the clear.</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Test 3: For each type of TOE component that, in the evaluated configuration, is capable of transmitting audit information to another TOE component (as specified in FTP_ITT.1 or FTP_ITC.1, respectively), the evaluator shall configure a secure channel and confirm that audit records generated as a result of actions taken by the evaluator are securely transmitted. It is sufficient to observe negotiation and establishment of the secure channel with the TOE component and the subsequent transmission of encrypted data to confirm this functionality. Alternatively, the following steps shall be performed: The evaluator induces audit record transmission, then reviews the packet capture around the time of transmission and verifies that no audit data is transmitted in the clear.</p>
+</div>
+<div class="paragraph">
+<p>While performing these tests, the evaluator shall verify that the TOE behaviour observed during testing is consistent with the descriptions provided in the TSS and the Guidance Documentation. Depending on the TOE configuration, there might be a large number of different possible configurations. In such cases, it is acceptable to perform subset testing, accompanied by an equivalency argument describing the evaluator’s sampling methodology.</p>
+</div>
 </div>
 </div>
 </div>

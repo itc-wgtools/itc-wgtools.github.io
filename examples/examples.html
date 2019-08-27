@@ -4,17 +4,16 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.5">
-<title>Protection Profile Sample Requirements</title>
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Examples for Building cPPs and SDs</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
-/* Uncomment @import statement when using as custom stylesheet */
+/* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
-audio,canvas,video{display:inline-block}
+audio,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
-script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 a{background:none}
 a:focus{outline:thin dotted}
@@ -219,8 +218,8 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
-.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .listingblock>.content{position:relative}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
 .listingblock:hover code[data-lang]::before{display:block}
@@ -241,7 +240,7 @@ table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;pad
 pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
 pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
@@ -258,12 +257,14 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
 .quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
 table.tableblock{max-width:100%;border-collapse:separate}
 p.tableblock:last-child{margin-bottom:0}
-td.tableblock>.content{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
 table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
 table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
@@ -434,26 +435,73 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.admonitionblock td.icon .icon-boilerplate:before {content:"\f023";color:#3F903E;}
+</style>
+<style>
+.admonitionblock td.icon .icon-review:before {content:"\f0ea";color:#FDB109;}
+</style>
+<style>
+.admonitionblock td.icon .icon-guidance:before {content:"\f02d";color:#0909FD;}
+</style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Protection Profile Sample Requirements</h1>
+<h1>Examples for Building cPPs and SDs</h1>
 <div class="details">
 <span id="revnumber">version 0.1,</span>
-<span id="revdate">2019-08-01</span>
+<span id="revdate">2019-08-26</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_developing_security_functional_requirements">Developing Security Functional Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_extended_requirement_examples_for_component_levelling">Extended Requirement Examples for Component Levelling</a></li>
+<li><a href="#_sfr_component_leveled_examples">SFR Component Leveled Examples</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch main-menu">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../index.html">Home</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/index.html">Admin Guide</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../user-guide/index.html">User Guide</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../drafts/index.html">Drafts</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../examples/examples.html">Examples</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This page is specifically for providing examples for creating Security Functional Requirements and associated Evaluation Activities.</p>
+<p>This page is a link to various example pages to help build cPPs and SDs. At the moment there are examples for Security Functional Requirements and their associated Evaluation Activities. Eventually there will be more (SPD, Security Objectives, etc.) as there is time to build out these sections.</p>
+</div>
+<div class="paragraph">
+<p>The examples here are taken from existing cPPs which will be referenced.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_developing_requirements">Developing Requirements</h2>
+<h2 id="_developing_security_functional_requirements">Developing Security Functional Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When developing the requirements for the cPP, it is important to realize there are "standard" requirements and "extended" requirements.</p>
@@ -472,393 +520,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Extended requirements though are ones that may be based on the standard requirements, but which are wholly new (and are denoted by the "_EXT" placed at the end of the requirement in the cPP).</p>
 </div>
 <div class="paragraph">
-<p>When working on creating new extended requirements, the first recommendation would be to review other cPPs that may have some common requirements. For example, the Network Device cPP has a lot of information for how distributed systems should interact, so if you are working on a distributed system, it would be useful to check the ND cPP and maybe copy the requirements for your use (instead of recreating them). Of course a copied requirement can be further modified, but starting from something is always easier than creating from scratch.</p>
+<p>Creating a new requirement means not just creating the requirement but also creating the Evaluation Activities for the requirement as well. The EAs are "how do you prove/test" the claims made about the requirement, and sometimes can be more work than creating the requirement itself (especially if you think you are done when you have the SFR, the EA can be tough).</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_extended_requirement_examples_for_component_levelling">Extended Requirement Examples for Component Levelling</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>The examples here are laid out for the component levelling section of the cPP. This has a lot more than just the requirement, but all this will be needed when the cPP is finished. The requirement itself is included in the listing.</p>
+<p>When working on creating new extended requirements, the first recommendation would be to review <a href="#CC2">[CC2]</a> and other cPPs that may have some similar requirements. For example, the Network Device cPP has a lot of information for how distributed systems should interact, so if you are working on a distributed system, it would be useful to check the ND cPP and maybe copy the requirements for your use (instead of recreating them). Of course a copied requirement can be further modified, regardless of its origin, and starting from something is always easier than creating from scratch.</p>
 </div>
 <div class="sect2">
-<h3 id="_identification_and_authentication_fia">Identification and Authentication (FIA)</h3>
-<div class="sect3">
-<h4 id="_mobile_biometric_enrolment_fia_mbe_ext">Mobile biometric enrolment (FIA_MBE_EXT)</h4>
-<div class="sect4">
-<h5 id="_family_behaviour">Family Behaviour</h5>
+<h3 id="_extended_requirement_examples_for_component_levelling">Extended Requirement Examples for Component Levelling</h3>
 <div class="paragraph">
-<p>This component defines the requirements for the TSF to be able to enrol a user, create templates of sufficient quality and prevent presentation attacks.</p>
+<p>When creating a new requirement, it is also necessary to create the Component Levelling. This is basically the documentation that would exist if the new requirement was actually part of <a href="#CC2">[CC2]</a>, and according to the CC requirements, must be created.</p>
 </div>
 <div class="paragraph">
-<p>These examples are taken from different cPPs, and specifically avoid cryptographic requirements (due to the complexity in their definition).</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_component_levelling">Component levelling</h5>
-<div id="img-FIA-MBE-EXT" class="imageblock">
-<div class="content">
-<img src="images/diag-d4ae6568b991ce3cd2678eab75d86c3a.png" alt="diag d4ae6568b991ce3cd2678eab75d86c3a" width="620" height="210">
-</div>
-<div class="title">Figure 1. Component levelling</div>
-</div>
-<div class="paragraph">
-<p>FIA_MBE_EXT.1 Mobile biometric enrolment requires the TSF to enrol a user.</p>
-</div>
-<div class="paragraph">
-<p>FIA_MBE_EXT.2 Quality of biometric templates for mobile biometric enrolment requires the TSF to create templates of sufficient quality.</p>
-</div>
-<div class="paragraph">
-<p>FIA_MBE_EXT.3 Presentation attack detection for mobile biometric enrolment requires the TSF to prevent presentation attacks during the mobile biometric enrolment.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_management_fia_mbe_ext_1">Management: FIA_MBE_EXT.1</h5>
-<div class="paragraph">
-<p>There are no management activities foreseen.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_management_fia_mbe_ext_2">Management: FIA_MBE_EXT.2</h5>
-<div class="paragraph">
-<p>The following actions could be considered for the management functions in FMT:</p>
-</div>
-<div class="paragraph">
-<p>a)	the management of the TSF data (setting threshold values for quality scores to generate templates) by an administrator.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_management_fia_mbe_ext_3">Management: FIA_MBE_EXT.3</h5>
-<div class="paragraph">
-<p>The following actions could be considered for the management functions in FMT:</p>
-</div>
-<div class="paragraph">
-<p>a)	the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_audit_fia_mbe_ext_1_fia_mbe_ext_2">Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2</h5>
-<div class="paragraph">
-<p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:</p>
-</div>
-<div class="paragraph">
-<p>a)	Basic: Success or failure of the mobile biometric enrollment</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_audit_fia_mbe_ext_3">Audit: FIA_MBE_EXT.3</h5>
-<div class="paragraph">
-<p>The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:</p>
-</div>
-<div class="paragraph">
-<p>a)	Basic: Detection of presentation attacks</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_fia_mbe_ext_1_mobile_biometric_enrolment">FIA_MBE_EXT.1 Mobile biometric enrolment</h5>
-<div class="paragraph">
-<p>Hierarchical to: No other components</p>
-</div>
-<div class="paragraph">
-<p>Dependencies: No dependencies</p>
-</div>
-<div class="paragraph">
-<p><strong>FIA_MBE_EXT.1.1</strong> The TSF shall provide a mechanism to enrol an authenticated user.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">*Application Note 1</dt>
-<dd>
-<p>User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_fia_mbe_ext_2_quality_of_biometric_templates_for_mobile_biometric_enrolment">FIA_MBE_EXT.2 Quality of biometric templates for mobile biometric enrolment</h5>
-<div class="paragraph">
-<p>Hierarchical to: No other components
-Dependencies: 	FIA_MBE_EXT.1 Mobile biometric enrolment</p>
-</div>
-<div class="paragraph">
-<p><strong>FIA_MBE_EXT.2.1</strong> The TSF shall create templates of sufficient quality.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">*Application Note 2</dt>
-<dd>
-<p>ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.</p>
-</dd>
-</dl>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_fia_mbe_ext_3_presentation_attack_detection_for_mobile_biometric_enrolment">FIA_MBE_EXT.3 Presentation attack detection for mobile biometric enrolment</h5>
-<div class="paragraph">
-<p>Hierarchical to: No other components
-Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment</p>
-</div>
-<div class="paragraph">
-<p><strong>FIA_MBE_EXT.3.1</strong> The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.</p>
-</div>
-</div>
+<p>The examples here are provided as the component levelling section of the cPP. While this has a lot more than just the requirement, all this will be needed, and so is a more complete example.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_evaluation_activities">Evaluation Activities</h3>
-<div class="sect3">
-<h4 id="_ea_for_fia_mbe_ext_1">EA for FIA_MBE_EXT.1</h4>
-<div class="sect4">
-<h5 id="_objective_of_the_ea">Objective of the EA</h5>
-<div class="paragraph">
-<p>The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her password. Security requirements for the password authentication are defined in [MDFPP] and out of scope of this EA.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_dependency">Dependency</h5>
-<div class="paragraph">
-<p>There is no dependency to other EAs defined in this SD.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_tool_types_required_to_perform_the_ea">Tool types required to perform the EA</h5>
-<div class="paragraph">
-<p>No tool is required for this EA.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_required_input_from_the_developer_or_other_entities">Required input from the developer or other entities</h5>
-<div class="paragraph">
-<p>Following input is required from the developer.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description</p>
-</li>
-<li>
-<p>AGD guidance shall provide clear instructions for a user to enrol him/herself</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_assessment_strategy">Assessment Strategy</h5>
-<div class="sect5">
-<h6 id="_strategy_for_ase_tss_and_agd_opeadv_fsp">Strategy for ASE_TSS and AGD_OPE/ADV_FSP</h6>
-<div class="paragraph">
-<p>The evaluator shall examine the TSS to understand how the TOE enrols a user and examine the AGD guidance to confirm that a user is required to enter his/her valid password before the mobile biometric enrolment.</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_strategy_for_ate_ind">Strategy for ATE_IND</h6>
-<div class="paragraph">
-<p>The evaluator shall perform the following test to verify that the TOE performs the mobile biometric enrolment correctly.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Step 1: The evaluator shall try to enrol him/herself without setting a password and confirm that he/she can’t enrol him/herself.</p>
-</li>
-<li>
-<p>Step 2: The evaluator shall set a password and confirm that he/she can’t enrol him/herself without entering the password correctly beforehand.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_passfail_criteria">Pass/Fail criteria</h5>
-<div class="paragraph">
-<p>The evaluator can pass this EA only if the evaluator confirms that:</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Information necessary to perform this EA is described in the TSS and AGD guidance</p>
-</li>
-<li>
-<p>Only authenticated users by password can enrol him/herself and any attempts to enrol without the authentication are rejected through the independent testing</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_requirements_for_reporting">Requirements for reporting</h5>
-<div class="paragraph">
-<p>The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_ea_for_fia_mbe_ext_2">EA for FIA_MBE_EXT.2</h4>
-<div class="sect4">
-<h5 id="_objective_of_the_ea_2">Objective of the EA</h5>
-<div class="paragraph">
-<p>Mobile biometric verification performance depends on quality of the template that is compared to the samples presented to the TOE. The evaluator shall examine that the TOE checks the quality of enrolment and authentication templates based on the assessment criteria to verify a user with an adequate reliability.</p>
-</div>
-<div class="paragraph">
-<p>If the TOE doesn’t create authentication templates, this EA is only applicable to enrolment templates.</p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall keep in mind that the assessment criteria for different biometric modalities may not be the same. The evaluator shall evaluate each biometric modality separately if the ST author selects multiple biometric modalities in FIA_MBV_EXT.1.1.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_dependency_2">Dependency</h5>
-<div class="paragraph">
-<p>The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the mobile biometric enrolment can be done correctly.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_tool_types_required_to_perform_the_ea_2">Tool types required to perform the EA</h5>
-<div class="paragraph">
-<p>Developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_required_input_from_the_developer_or_other_entities_2">Required input from the developer or other entities</h5>
-<div class="paragraph">
-<p>Following input is required from the developer.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description</p>
-</li>
-<li>
-<p>AGD guidance shall provide clear instructions for a user to enrol him/herself</p>
-</li>
-<li>
-<p>Supplementary information (Assessment criteria for templates) shall describe assessment criteria for creating templates</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_assessment_strategy_2">Assessment Strategy</h5>
-<div class="sect5">
-<h6 id="_strategy_for_ase_tss_and_agd_opeadv_fsp_2">Strategy for ASE_TSS and AGD_OPE/ADV_FSP</h6>
-<div class="paragraph">
-<p><strong>Enrolment templates</strong></p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall examine the TSS to understand how the TOE generate templates of sufficient quality at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol him/herself correctly and how the TOE behaves when low quality samples are presented to the TOE.</p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall examine that “assessment criteria for templates” to check that how the TOE creates the templates based on this assessment criteria. The “assessment criteria for templates” may include;</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available</p>
-</li>
-<li>
-<p>Method to quantify the quality of samples (e.g. method to generate quality score)</p>
-</li>
-<li>
-<p>Assessment criteria to accept the sample of sufficient utility (e.g. compare quality score to quality threshold)</p>
-</li>
-<li>
-<p>Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. NFIQ for fingerprint)</p>
-</li>
-<li>
-<p>Additional assessment criteria applied to creation of enrolment templates</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Authentication templates</strong></p>
-</div>
-<div class="paragraph">
-<p>If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.</p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall examine that the “assessment criteria for templates” to check that how the TOE creates the authenticate templates based on its assessment criteria. The “assessment criteria for templates” may include a) – d) in <a href="#_strategy_for_ase_tss_and_agd_opeadv_fsp_2">Strategy for ASE_TSS and AGD_OPE/ADV_FSP</a> and;</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a" start="6">
-<li>
-<p>Additional assessment criteria to applied to creation of authentication templates</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_strategy_for_ate_ind_2">Strategy for ATE_IND</h6>
-<div class="paragraph">
-<p><strong>Enrolment templates</strong></p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall perform the following test to verify that the TOE generates templates of sufficient quality.</p>
-</div>
-<div class="paragraph">
-<p>The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Step 1: The evaluator shall perform mobile biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in “assessment criteria for templates” (e.g. presenting biometric samples of low quality)</p>
-</li>
-<li>
-<p>Step 2: The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Authentication templates</strong></p>
-</div>
-<div class="paragraph">
-<p>The evaluator shall perform the following test to verify that the TOE generates authentication templates of sufficient quality only if the evaluator judges that creating authentication templates is feasible.</p>
-</div>
-<div class="paragraph">
-<p>The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Step 1: The evaluator shall enrol him/herself</p>
-</li>
-<li>
-<p>Step 2: The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates</p>
-</li>
-<li>
-<p>Step 3: The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_passfail_criteria_2">Pass/Fail criteria</h5>
-<div class="paragraph">
-<p>The evaluator can pass this EA only if the evaluator confirms that:</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Information necessary to perform this EA is described in the TSS, AGD guidance and “assessment criteria for templates”</p>
-</li>
-<li>
-<p>The TOE creates only templates that pass the assessment criteria through the independent testing</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_requirements_for_reporting_2">Requirements for reporting</h5>
-<div class="paragraph">
-<p>The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.</p>
-</div>
-</div>
-</div>
+<h3 id="_sfr_component_leveled_examples">SFR Component Leveled Examples</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. SFR Examples</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SFR</th>
+<th class="tableblock halign-left valign-top">Source</th>
+<th class="tableblock halign-left valign-top">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">FIA_MBE_EXT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="FIA_MBE_EXT-example.html" target="\"_blank\"">FIA_MBE_EXT</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">FAU_GEN_EXT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collaborative Protection Profile for Network Devices</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="FAU_GEN_EXT-example.html" target="\"_blank\"">FAU_GEN_EXT</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -866,7 +570,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment</p>
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2019-08-01 11:45:08 -0400
+Last updated 2019-08-27 13:40:54 -0400
 </div>
 </div>
 </body>
