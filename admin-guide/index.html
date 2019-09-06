@@ -445,6 +445,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <style>
 .admonitionblock td.icon .icon-guidance:before {content:"\f02d";color:#0909FD;}
 </style>
+<style>
+.admonitionblock td.icon .icon-initial1:before {content:"\f251";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-initial2:before {content:"\f25a";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-initial3:before {content:"\f178";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-initial4:before {content:"\f061";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-initial5:before {content:"\f0a1";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-USB1:before {content:"\f287";color:#CB0C33;}
+</style>
+<style>
+.admonitionblock td.icon .icon-USB2:before {content:"\f2db";color:#CB0C33;}
+</style>
+<style>
+.admonitionblock td.icon .icon-discussion:before {content:"\f086";color:#F5F008;}
+</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -462,7 +486,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_introduction">1. Introduction</a></li>
 <li><a href="#_github">2. GitHub</a>
 <ul class="sectlevel2">
-<li><a href="#_github_setup">2.1. GitHub Setup</a></li>
+<li><a href="#_github_setup">2.1. GitHub Setup</a>
+<ul class="sectlevel3">
+<li><a href="#_organization_setup">2.1.1. Organization Setup</a></li>
+<li><a href="#_repository_setup">2.1.2. Repository Setup</a>
+<ul class="sectlevel4">
+<li><a href="#_new_itc_template_repo_labels_script">2.1.2.1. New-iTC-Template repo-labels script</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_organization_settings">2.2. Organization Settings</a>
 <ul class="sectlevel3">
 <li><a href="#_organization_owners">2.2.1. Organization Owners</a></li>
@@ -503,17 +536,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch main-menu">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../index.html">Home</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/index.html">Admin Guide</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../user-guide/index.html">User Guide</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/iTC-Workflow.html">iTC Workflow</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../drafts/index.html">Drafts</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../examples/examples.html">Examples</a></p></td>
 </tr>
@@ -574,6 +609,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><a href="DocPublishing.html">Publishing iTC Documents</a></p>
 </li>
+<li>
+<p><a href="iTC-Workflow.html">iTC Workflow</a></p>
+</li>
+<li>
+<p><a href="https://github.com/itc-wgtools/repo-labels">repo-labels repository</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -630,8 +671,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </table>
 </div>
+<div class="sect3">
+<h4 id="_organization_setup">2.1.1. Organization Setup</h4>
 <div class="paragraph">
-<p>To setup the iTC organization and repository, do the following:</p>
+<p>To setup the iTC organization, do the following:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -654,16 +697,100 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 </li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_repository_setup">2.1.2. Repository Setup</h4>
+<div class="paragraph">
+<p>Once you have created the organization, you need to create some repositories. The number needed may depend on where you are in the process. Three template repositories have been created to help create the structure and populate the initial templates you need.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Template Repositories</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-top">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">New-iTC-Admin-template</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This contains templates for the iTC such as the ESR, ToR and other governing documents.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-Admin-template" class="bare" target="\"_blank\"">https://github.com/itc-wgtools/New-iTC-Admin-template</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">New-iTC-Template</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This contains templates for the cPP, SD and PP-Configuration (and PP-Module if needed)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-Template" class="bare" target="\"_blank\"">https://github.com/itc-wgtools/New-iTC-Template</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">New-iTC-website-template</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This contains a template for the github.io website that can be setup for the iTC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-website-template" class="bare" target="\"_blank\"">https://github.com/itc-wgtools/New-iTC-website-template</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>All three templates should be used when setting up the iTC, though it is possible that some may be used at different times (see <a href="./iTC-workflow.html">iTC Workflow</a>).</p>
+</div>
+<div class="paragraph">
+<p>Each template uses the same steps to do the initial setup of your new repository.</p>
+</div>
+<div class="paragraph">
+<p>To create the new repository, follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Click "Your repositories", and then click New in the upper right quadrant of the screen</p>
+<p>Go to the URL for the type of repository you are going to create</p>
 </li>
 <li>
-<p>Choose the Organization as the owner (it will default to your account) and enter the Respository name, add a description if necessary, and finally click Create repository. The rest can be left as default</p>
+<p>Click the green "Use this template" button</p>
+</li>
+<li>
+<p>Choose the Organization as the owner (it will default to your account) and enter the Respository name, add a description if necessary, and finally click Create repository from template. The rest can be left as default</p>
 </li>
 <li>
 <p>The next screen after creation is useful for getting up and running. Read the Quick setup steps, commands used, etc.</p>
 </li>
 </ol>
+</div>
+<div class="sect4">
+<h5 id="_new_itc_template_repo_labels_script">2.1.2.1. New-iTC-Template repo-labels script</h5>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This section is only needed when creating a repository for the cPP and related documents. While it can be used for any of the repositories, the labels created are only needed in the cPP repository.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the creating the cPP repository from the New-iTC-Template repository, it is important to run the script contained in the <a href="https://github.com/itc-wgtools/repo-labels">repo-labels</a> repository. The purpose of this script is to edit the labels available for Issues and Pull Requests to a standard set (and be relied upon for other tools added over time).</p>
+</div>
+<div class="paragraph">
+<p>While the repository will work fine without this script, some of the features of the template repository and some planned maintenance tools will not work correctly without this script.</p>
+</div>
+<div class="paragraph">
+<p>Instructions for running the script are at the repository.</p>
+</div>
+<div class="paragraph">
+<p>The repository assumes the user has installed Ruby (such as by following <a href="#_installing_ruby">Installing Ruby</a>).</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -784,7 +911,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The <a href="#Branch Protection">[Branch Protection]</a> table shows some examples of the levels to set the approvals at. What these settings mean is how many users must approve a change before it can be merged into the specified branch.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Branch Protection</caption>
+<caption class="title">Table 2. Branch Protection</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1129,7 +1256,7 @@ gem install asciidoctor-diagram</pre>
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2019-08-27 13:40:54 -0400
+Last updated 2019-09-06 15:31:11 -0400
 </div>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Publishing the iTC GitHub Website</title>
+<title>iTC Workflow Overview</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -472,7 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Publishing the iTC GitHub Website</h1>
+<h1>iTC Workflow Overview</h1>
 <div class="details">
 <span id="revnumber">version 0.1,</span>
 <span id="revdate">2019-08-01</span>
@@ -480,10 +480,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_references">References</a></li>
-<li><a href="#_site_content_source">Site Content Source</a></li>
-<li><a href="#_key_points_to_creating_the_github_io_site">Key Points to Creating the github.io Site</a></li>
+<li><a href="#_acknowledgements">Acknowledgements</a></li>
+<li><a href="#_audience">Audience</a></li>
+<li><a href="#_resources">Resources</a></li>
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_repositories_and_the_workflow">2. Repositories and the Workflow</a></li>
 </ul>
 </div>
 </div>
@@ -501,85 +502,143 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./index.html">Admin Guide Home</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubClients.html">GitHub Clients</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubTraining.html">GitHub Training</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubio.html">github.io Publishing</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./AsciidoctorPublish.html">Asciidoctor Publishing</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./DocPublishing.html">Publishing iTC Docs</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../index.html">Home</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/index.html">Admin Guide</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../user-guide/index.html">User Guide</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../admin-guide/iTC-Workflow.html">iTC Workflow</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../drafts/index.html">Drafts</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../examples/examples.html">Examples</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_acknowledgements">Acknowledgements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>While the iTC can rely on the Common Criteria Portal and the CCUF OnlyOffice site to publish their documentation, many times it may be better to create a standalone website for the iTC that can provide better context for the information being published as well as be updated when the iTC needs it to be updated (as opposed to the CC Portal which can take a little time).</p>
+<p>This is a quick overview of some of the Working Group and iTC management processes related to the tools that are provided here.</p>
+</div>
+<div class="paragraph">
+<p>This document intends to communicate to the WG/iTC admins some of the tools that can be used and when they may be most beneficial. This is not intended to be a replacement for iTC guidance from the CCDB, but some assistance as to how/when to use the tools provided here.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">References</h2>
+<h2 id="_audience">Audience</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The intended audience for this overview are those people who will manage the technical processes of the WG/iTC. This may be the chair or other representative.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This page is not intended to replace the <a href="index.html">Admin Guide</a>, but only to provide some pointers about using the repositories.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Resources</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://pages.github.com/" target="\"_blank\"">GitHub Pages</a></p>
+<p><a href="index.html">iTC Administrator Tools Overview</a></p>
 </li>
 <li>
-<p><a href="https://medium.com/@svinkle/publish-and-share-your-own-website-for-free-with-github-2eff049a1cb5" target="\"_blank\"">Publishing to github.io</a></p>
+<p><a href="https://www.commoncriteriaportal.org/files/communities/Establishing%20iTCs%20and%20cPP%20development%20-%20v0-7.pdf" target="\"_blank\"">Establishing iTCs and cPP development</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_site_content_source">Site Content Source</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The sites that can be published on github.io are limited to static HTML pages. This makes sense, it is a free service, but is also fine for the purposes of the iTC.</p>
+<p>Generally an iTC should end up with at least three repositories for their work. Note that the name here is meant as a descriptive name, and does not need to be the actual name of the repository that is created.</p>
 </div>
-<div class="paragraph">
-<p>Since the pages are just HTML, the iTC can decide the best way to create the content pages. Obviously the iTC can create the pages directly in HTML (if there are people in the iTC who can do that). Another option is to use Asciidoctor to create the content and then generate the HTML files using the same methods as those for creating the cPP.</p>
-</div>
-<div class="paragraph">
-<p>Because the site can be created in many ways, the specifics of creating this content will not be described here, only a quick overview of the GitHub reference page.</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Repositories</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">iTC Admin</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This repository would contain the governing documents for the WG/iTC. For example there is an ESR template that could be used in the template repository.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">iTC website</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This repository would be used for the github.io website that can be setup for the WG/iTC. This would provide a place for the group to announce the status and progress of the group.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">iTC Docs</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">This repository would contain the cPP, SD and PP-Configuration (and PP-Module if needed). This would be the main working folder for the output of the iTC (as opposed to the administration of the iTC).</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_key_points_to_creating_the_github_io_site">Key Points to Creating the github.io Site</h2>
+<h2 id="_repositories_and_the_workflow">2. Repositories and the Workflow</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The instructions in the <a href="#GitHub Pages">[GitHub Pages]</a> link in the references is the best, simple description for creating the iTC site.</p>
+<p>The three repositories are useful at different times in the creation and ongoing support of an iTC, and can be used as such. There is no requirement that all the repositories be created at once, GitHub allows the creation of repositories at any time within the organization, enabling it to change over time.</p>
 </div>
 <div class="paragraph">
-<p>There are a few key points to remember though when creating the site:</p>
+<p>With that in mind, here are some recommendations about when it may be useful to create the various repositories based on the current "Establishing iTCs and cPP development" document.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>The respository you create MUST be the same name as the Organization name</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For example if you create TestiTC as the Organization name, the repository for the site must be TestiTC. This will give testitc.github.io as the URL.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>For simplicity you should use index.html as the main page</p>
-</li>
-<li>
-<p>The Master branch for the repository is used to generate the site</p>
-</li>
-<li>
-<p>The site can take up to 5 minutes to update after you have published content, so don&#8217;t worry if you refresh and it isn&#8217;t immediately changed</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Workflow Points for Creating Repositories</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Process Flow Period</th>
+<th class="tableblock halign-left valign-middle">Repository to Create (Template link)</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">CCDB creates WG (block 4)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-Admin-template" target="\"_blank\"">iTC Admin Repository</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At this point the WG has been created and work on the initial documents must start. Templates for these documents are available in this template repository.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Any time between CCDB creates WG and iTC creates draft SPD (blocks 4 to 14)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-website-Template" target="\"_blank\"">iTC website</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The creation of the website can happen at any point, even later than the beginning of the SPD work, but it would seem a good idea to provide more information about what is going on (and the ability to control the format of the information) than is available on the CC Portal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">iTC creates draft SPD (block 14)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://github.com/itc-wgtools/New-iTC-Template" target="\"_blank\"">iTC Docs</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The start of work on the SPD is really the first place where the cPP work starts, so at this point the cPP repository should be created.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A key assumption here is that the people in the WG will also be part of the eventual iTC, so there would be a smooth transition from one phase to the next, and the repositories would provide a history of everything from the initial ESR work onwards.</p>
 </div>
 </div>
 </div>
@@ -587,7 +646,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2019-09-05 13:30:54 -0400
+Last updated 2019-09-06 15:31:11 -0400
 </div>
 </div>
 </body>
