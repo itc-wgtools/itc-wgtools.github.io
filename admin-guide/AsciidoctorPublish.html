@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Asciidoctor Generating Output</title>
+<title>Asciidoctor Generating Output with itc_gentools</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -472,7 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Asciidoctor Generating Output</h1>
+<h1>Asciidoctor Generating Output with itc_gentools</h1>
 <div class="details">
 <span id="revnumber">version 0.1,</span>
 <span id="revdate">2019-08-01</span>
@@ -481,9 +481,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_the_itc_gentool_script">The itc-gentool Script</a>
+<li><a href="#_the_itc_gentools_ruby_gem_package">The itc_gentools Ruby Gem Package</a>
 <ul class="sectlevel2">
-<li><a href="#_tool_folder">Tool Folder</a></li>
+<li><a href="#_installation_of_itc_gentools">Installation of itc_gentools</a></li>
 <li><a href="#_generating_output">Generating Output</a></li>
 </ul>
 </li>
@@ -528,48 +528,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>At this point there are two types of output that are supported from Asciidoctor: HTML and PDF. The same source file can be used to generate both types of output files, just using different commands from the tools that have been installed.</p>
 </div>
 <div class="paragraph">
-<p>For simplicity, use the tools installed as part of the setup. The iTC-Tools package should cover the majority of output generation for HTML and PDF files automatically.</p>
+<p>For simplicity, use the tools installed as part of the setup. The itc_gentools package should cover the majority of output generation for HTML and PDF files automatically.</p>
+</div>
+<div class="paragraph">
+<p>The itc-gentools script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the_itc_gentool_script">The itc-gentool Script</h2>
+<h2 id="_the_itc_gentools_ruby_gem_package">The itc_gentools Ruby Gem Package</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The itc-gentool.rb script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
+<p>The itc_gentools package can be found <a href="https://github.com/itc-wgtools/itc_gentools">here</a>. The latest version can be seen listed in the README.</p>
 </div>
 <div class="sect2">
-<h3 id="_tool_folder">Tool Folder</h3>
+<h3 id="_installation_of_itc_gentools">Installation of itc_gentools</h3>
 <div class="paragraph">
-<p>The tool is run from the command line and is built in Ruby to easily match with the Asciidoctor components.</p>
-</div>
-<div class="paragraph">
-<p>When the tool is installed, it will have the following folder structure.</p>
+<p>To install the package, you will need to download the GEM file for the latest version. On the home page of the tool, click the link for the latest version. On this page you will see a file called</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Output Generation
- |
- +--input
- |   +----sample.adoc
- |
- +--output
- |
- +--themes
- |   +----admonition-theme.yml
- |
- +----itc-gentool.rb
- +----LICENSE.txt</pre>
+<pre>itc_gentools-X.Y.Z.gem</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The &lt;input&gt; and &lt;output&gt; folders are for the documents to be published. The itc-gentool script expects the Asciidoctor file to be placed into the input folder and it will place the result files into the output folder. The sample.adoc file in the &lt;input&gt; folder can be used to test the script.</p>
+<p>where X.Y.Z is the version number. Download this file so you can access it via the Ruby command prompt.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The installation process assumed you have already installed Ruby on the computer as specified in the setup instructions. If you have not, then do that now.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>The &lt;themes&gt; folder has the theme necessary to properly produce PDF output using the current configuration.</p>
+<p>To install the Gem, run the command</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>gem install itc_gentools-X.Y.Z.gem</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>The script has been placed under the MIT license (very unrestrictive in use).</p>
+<p>(remember to enter the proper version number).</p>
+</div>
+<div class="paragraph">
+<p>The itc-gentool.rb script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
 </div>
 </div>
 <div class="sect2">
@@ -639,7 +650,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_direct_use_of_asciidoctor_tools">Direct Use of Asciidoctor tools</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For simplicity and consistency, it is recommended to use the itc-gentool script, but there could be times when more flexibility is necessary. The following sections specify the command line parameters that are being used in the script.</p>
+<p>For simplicity and consistency, it is recommended to use the itc_gentool script, but there could be times when more flexibility is necessary. The following sections specify the command line parameters that are being used in the script.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -649,11 +660,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The provided script is based on the expectations for use at the time it was created. If you determine there are other features that are needed or changes you have made, please provide this feedback to the iTC-Tools WG so they can be shared with the wider community.</p>
+<p>The provided script is based on the expectations for use at the time it was created. If you determine there are other features that are needed or changes you have made, please provide this feedback to the iTC Tools WG so they can be shared with the wider community.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The &lt;itc_gentools HOME&gt; is the installed location of the package.</p>
 </div>
 <div class="sect2">
 <h3 id="_html_command_line_parameters">HTML Command Line Parameters</h3>
@@ -668,7 +682,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>asciidoctor -r notice-block.rb -r asciidoctor-diagram -a data-uri -a toc=left -D output ./input/sample.adoc</pre>
+<pre>asciidoctor -r &lt;itc_gentools HOME&gt;/notice-block.rb -r asciidoctor-diagram -a data-uri -a toc=left -D &lt;output folder&gt; sample.adoc</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -692,7 +706,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables ditaa graphics generation output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r notice-block.rb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r &lt;itc_gentools HOME&gt;/notice-block.rb</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Calls the iTC admonition block for custom icons. This</p>
 <p class="tableblock">This enables the graphics in the templates for iTC guidance, and should be used to help spot sections that may not have yet been removed.</p></td>
 </tr>
@@ -720,7 +734,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>asciidoctor-pdf -r notice-block.rb -r asciidoctor-diagram -a pdf-theme=./themes/admonition-theme.yml -D output ./input/sample.adoc</pre>
+<pre>asciidoctor-pdf -r &lt;itc_gentools HOME&gt;/notice-block.rb -r asciidoctor-diagram -a pdf-theme=&lt;itc_gentools HOME&gt;/themes/admonition-theme.yml -D &lt;output folder&gt; sample.adoc</pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -741,12 +755,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables ditaa graphics generation output</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r notice-block.rb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-r &lt;itc_gentools HOME&gt;/notice-block.rb</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Calls the iTC admonition block for custom icons. This</p>
 <p class="tableblock">This enables the graphics in the templates for iTC guidance, and should be used to help spot sections that may not have yet been removed.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a pdf-theme=./themes/admonition-theme.yml</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-a pdf-theme=&lt;itc_gentools HOME&gt;/themes/admonition-theme.yml</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This goes along with the notice-block and must be used together to properly render the icons.</p></td>
 </tr>
 </tbody>
@@ -758,7 +772,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2019-09-05 13:30:54 -0400
+Last updated 2019-09-10 14:35:33 -0400
 </div>
 </div>
 </body>
