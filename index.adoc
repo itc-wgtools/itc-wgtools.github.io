@@ -1,15 +1,15 @@
 = CCUF Team Tools Working Group
 :showtitle:
 :imagesdir: images
-:revnumber: 0.5
-:revdate: 2019-08-27
+:revnumber: 0.6
+:revdate: 2019-09-20
 
 include::menu-include.adoc[]
 
 == Introduction
 The CCUF established the Team Tools Working Group to work on a set of tools for iTCs. The overall goal is to produce a set of guidance documents on how to use the tools for an iTC and templates for the documents the iTC will need (both to product, such as a cPP and for the processes of managing the iTC itself). The output from this group is intended to be freely available to all iTCs, and will hopefully be maintained over the long term.
 
-The work is being done in GitHub at https://github.com/itc-wgtools/cPP-Tools.
+The work is being done in GitHub at https://github.com/itc-wgtools/. There aer multiple repositories for different aspects of the tools, from the cPP templates, to iTC templates to guidance docs and tools created by the WG.
 
 To join the Team Tools WG, please send a message to: ccuf-team-tools-wg@googlegroups.com
 
