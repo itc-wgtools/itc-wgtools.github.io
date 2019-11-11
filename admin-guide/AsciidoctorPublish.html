@@ -446,25 +446,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .admonitionblock td.icon .icon-guidance:before {content:"\f02d";color:#0909FD;}
 </style>
 <style>
-.admonitionblock td.icon .icon-initial1:before {content:"\f251";color:#C50CCB;}
+.admonitionblock td.icon .icon-initial:before {content:"\f25a";color:#C50CCB;}
 </style>
 <style>
-.admonitionblock td.icon .icon-initial2:before {content:"\f25a";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial3:before {content:"\f178";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial4:before {content:"\f061";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial5:before {content:"\f0a1";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-USB1:before {content:"\f287";color:#CB0C33;}
-</style>
-<style>
-.admonitionblock td.icon .icon-USB2:before {content:"\f2db";color:#CB0C33;}
+.admonitionblock td.icon .icon-USB:before {content:"\f2db";color:#CB0C33;}
 </style>
 <style>
 .admonitionblock td.icon .icon-discussion:before {content:"\f086";color:#F5F008;}
@@ -474,8 +459,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Asciidoctor Generating Output with itc_gentools</h1>
 <div class="details">
-<span id="revnumber">version 0.1,</span>
-<span id="revdate">2019-08-01</span>
+<span id="revnumber">version 0.2,</span>
+<span id="revdate">2019-11-11</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -485,12 +470,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_installation_of_itc_gentools">Installation of itc_gentools</a></li>
 <li><a href="#_generating_output">Generating Output</a></li>
-</ul>
-</li>
-<li><a href="#_direct_use_of_asciidoctor_tools">Direct Use of Asciidoctor tools</a>
-<ul class="sectlevel2">
-<li><a href="#_html_command_line_parameters">HTML Command Line Parameters</a></li>
-<li><a href="#_pdf_command_line_parameters">PDF Command Line Parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -531,7 +510,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>For simplicity, use the tools installed as part of the setup. The itc_gentools package should cover the majority of output generation for HTML and PDF files automatically.</p>
 </div>
 <div class="paragraph">
-<p>The itc-gentools script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
+<p>The itc_gentools script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
+</div>
+<div class="paragraph">
+<p>The itc_gentools is maintained in its own repository <a href="https://github.com/itc-wgtools/itc_gentools">here</a>. The latest version will always be available at this location. Additional documentation will also be maintained here.</p>
 </div>
 </div>
 </div>
@@ -539,7 +521,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_the_itc_gentools_ruby_gem_package">The itc_gentools Ruby Gem Package</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The itc_gentools package can be found <a href="https://github.com/itc-wgtools/itc_gentools">here</a>. The latest version can be seen listed in the README.</p>
+<p>The itc_gentools package can be found at the itc_gentools <a href="https://github.com/itc-wgtools/itc_gentools">repository</a>. The latest version is listed in the README.</p>
 </div>
 <div class="sect2">
 <h3 id="_installation_of_itc_gentools">Installation of itc_gentools</h3>
@@ -580,7 +562,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>(remember to enter the proper version number).</p>
 </div>
 <div class="paragraph">
-<p>The itc-gentool.rb script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
+<p>The itc_gentools.rb script provides a simple method for creating the HTML and PDF files automatically using the Asciidoctor tools that were installed during the setup.</p>
 </div>
 </div>
 <div class="sect2">
@@ -590,7 +572,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>itc-gentool &lt;output type&gt; &lt;source file&gt;</pre>
+<pre>itc_gentools &lt;output type&gt; &lt;source file&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -614,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The following &lt;output type&gt; parameters are accepted (not case sensitive).</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. itc-gentool Output Type Parameters</caption>
+<caption class="title">Table 1. itc_gentools Output Type Parameters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -646,133 +628,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_direct_use_of_asciidoctor_tools">Direct Use of Asciidoctor tools</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>For simplicity and consistency, it is recommended to use the itc_gentool script, but there could be times when more flexibility is necessary. The following sections specify the command line parameters that are being used in the script.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The provided script is based on the expectations for use at the time it was created. If you determine there are other features that are needed or changes you have made, please provide this feedback to the iTC Tools WG so they can be shared with the wider community.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The &lt;itc_gentools HOME&gt; is the installed location of the package.</p>
-</div>
-<div class="sect2">
-<h3 id="_html_command_line_parameters">HTML Command Line Parameters</h3>
-<div class="paragraph">
-<p>If you have a need to run the Asciidoctor HTML generation directly instead of through the provided scripts, the following parameters must be added for consistent output (in addition to the input filename).</p>
-</div>
-<div class="paragraph">
-<p>Note that it is possible to skip some of these if you do not need the feature offered, but having it enabled and not using it does not cause any problems, so the above scripts always call these for consistency.</p>
-</div>
-<div class="paragraph">
-<p>The following is the current HTML command line being used in the script.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>asciidoctor -r &lt;itc_gentools HOME&gt;/notice-block.rb -r asciidoctor-diagram -a data-uri -a toc=left -D &lt;output folder&gt; sample.adoc</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The parameters are specified in the table below.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. HTML Asciidoctor Parameters</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r asciidoctor-diagram</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables ditaa graphics generation output</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r &lt;itc_gentools HOME&gt;/notice-block.rb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calls the iTC admonition block for custom icons. This</p>
-<p class="tableblock">This enables the graphics in the templates for iTC guidance, and should be used to help spot sections that may not have yet been removed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a data-uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This will embed the graphics into the output (so the HTML page is more portable)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a toc=left</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When generating HTML output this makes the TOC a sidebar on the left (instead of placed inline at the top of the page)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_pdf_command_line_parameters">PDF Command Line Parameters</h3>
-<div class="paragraph">
-<p>If you have a need to run the Asciidoctor PDF generation directly instead of through the provided scripts, the following parameters must be added for consistent output (in addition to the input filename).</p>
-</div>
-<div class="paragraph">
-<p>Note that it is possible to skip some of these if you do not need the feature offered, but having it enabled and not using it does not cause any problems, so the above scripts always call these for consistency.</p>
-</div>
-<div class="paragraph">
-<p>The following is the current PDF command line being used in the script.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>asciidoctor-pdf -r &lt;itc_gentools HOME&gt;/notice-block.rb -r asciidoctor-diagram -a pdf-theme=&lt;itc_gentools HOME&gt;/themes/admonition-theme.yml -D &lt;output folder&gt; sample.adoc</pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. PDF Asciidoctor Parameters</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r asciidoctor-diagram</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enables ditaa graphics generation output</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-r &lt;itc_gentools HOME&gt;/notice-block.rb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Calls the iTC admonition block for custom icons. This</p>
-<p class="tableblock">This enables the graphics in the templates for iTC guidance, and should be used to help spot sections that may not have yet been removed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a pdf-theme=&lt;itc_gentools HOME&gt;/themes/admonition-theme.yml</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This goes along with the notice-block and must be used together to properly render the icons.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.1<br>
-Last updated 2019-09-10 14:35:33 -0400
+Version 0.2<br>
+Last updated 2019-11-11 14:25:31 -0500
 </div>
 </div>
 </body>
