@@ -446,25 +446,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .admonitionblock td.icon .icon-guidance:before {content:"\f02d";color:#0909FD;}
 </style>
 <style>
-.admonitionblock td.icon .icon-initial1:before {content:"\f251";color:#C50CCB;}
+.admonitionblock td.icon .icon-initial:before {content:"\f25a";color:#C50CCB;}
 </style>
 <style>
-.admonitionblock td.icon .icon-initial2:before {content:"\f25a";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial3:before {content:"\f178";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial4:before {content:"\f061";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-initial5:before {content:"\f0a1";color:#C50CCB;}
-</style>
-<style>
-.admonitionblock td.icon .icon-USB1:before {content:"\f287";color:#CB0C33;}
-</style>
-<style>
-.admonitionblock td.icon .icon-USB2:before {content:"\f2db";color:#CB0C33;}
+.admonitionblock td.icon .icon-USB:before {content:"\f2db";color:#CB0C33;}
 </style>
 <style>
 .admonitionblock td.icon .icon-discussion:before {content:"\f086";color:#F5F008;}
@@ -510,6 +495,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./AsciidoctorPublish.html">Asciidoctor Publishing</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./DocPublishing.html">Publishing iTC Docs</a></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./Maint-Project-Flow.html">Doc Workflow</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./Interp-Flow.html">Interpretation</a></p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -544,10 +537,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_merge_the_working_branch_to_master">1. Merge the Working Branch to Master</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have the working Branch to the point where you think it is ready to publish, it should be merged into the Master branch. This will update the Master (which would be blank the first time you do this, but later would have the "current" published version) to be the same as the current Working branch.</p>
+<p>Once you have the working Branch to the point where you think it is ready to publish, it should be merged into the Master branch. If you are following a process similar to that described in the <a href="./Maint-Project-Flow.html">Doc Workflow</a> then the iTC should have approved the current Working branch and the Editor Team should then merge this into the Master branch.</p>
 </div>
 <div class="paragraph">
-<p>To do this, follow these steps:</p>
+<p>This will update the Master (which would be blank the first time you do this, but later would have the "current" published version) to be the same as the current Working branch.</p>
+</div>
+<div class="paragraph">
+<p>To do this, the Editor Team will follow these steps:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -578,18 +574,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Members should be assigned to review the changes (though ideally you are moving to this point because everyone already agreed to what is in the Pull Request)</p>
+<p>Members of the Editor Team should be assigned to review the changes (though ideally you are moving to this point because everyone already agreed to what is in the Pull Request)</p>
 </li>
 </ol>
 </div>
 </li>
+<li>
+<p>The Editor Team should review and approve the Pull Request</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
-<p>At this point you will have a new Pull Request to merge these changes into the Master. If you have configured your branches correctly you will now need several approvals before the merge is approved. The number is set by the administrator (as specified in the Branch Protection table during the setup).</p>
-</div>
-<div class="paragraph">
-<p>Once the Pull Request has been approved by the number of members necessary, the Pull Request can be merged.</p>
+<p>Once the Pull Request has been approved by the number of members necessary, the Pull Request can be merged to Master.</p>
 </div>
 </div>
 </div>
@@ -676,7 +672,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.1<br>
-Last updated 2019-09-05 13:30:54 -0400
+Last updated 2020-01-06 15:20:36 -0500
 </div>
 </div>
 </body>

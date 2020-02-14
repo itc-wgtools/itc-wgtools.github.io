@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>iTC Documentation Workflow</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.admonitionblock td.icon .icon-boilerplate:before {content:"\f023";color:#3F903E;}
+</style>
+<style>
+.admonitionblock td.icon .icon-review:before {content:"\f0ea";color:#FDB109;}
+</style>
+<style>
+.admonitionblock td.icon .icon-guidance:before {content:"\f02d";color:#0909FD;}
+</style>
+<style>
+.admonitionblock td.icon .icon-initial:before {content:"\f25a";color:#C50CCB;}
+</style>
+<style>
+.admonitionblock td.icon .icon-USB:before {content:"\f2db";color:#CB0C33;}
+</style>
+<style>
+.admonitionblock td.icon .icon-discussion:before {content:"\f086";color:#F5F008;}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>iTC Documentation Workflow</h1>
+<div class="details">
+<span id="revnumber">version 0.1,</span>
+<span id="revdate">2019-11-15</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_projects_releases">1. Projects &amp; Releases</a>
+<ul class="sectlevel2">
+<li><a href="#_notes_for_overall_goals">1.1. Notes for Overall Goals</a></li>
+<li><a href="#_parking_lotfuture_undetermined_projects">1.2. Parking Lot/Future Undetermined "Projects"</a></li>
+</ul>
+</li>
+<li><a href="#_maintenance_vs_interpretation">2. Maintenance vs Interpretation</a></li>
+<li><a href="#_teams">3. Teams</a>
+<ul class="sectlevel2">
+<li><a href="#_triage_team">3.1. Triage Team</a></li>
+<li><a href="#_editors_team">3.2. Editors Team</a></li>
+<li><a href="#_interpretation_team">3.3. Interpretation Team</a></li>
+</ul>
+</li>
+<li><a href="#_documentation_workflow_generalized">4. Documentation Workflow (Generalized)</a></li>
+<li><a href="#_workflows">5. Workflows</a>
+<ul class="sectlevel2">
+<li><a href="#_using_the_projects">5.1. Using the Projects</a>
+<ul class="sectlevel3">
+<li><a href="#_to_do_phase">5.1.1. To Do Phase</a></li>
+<li><a href="#_awaiting_priority_phase">5.1.2. Awaiting Priority Phase</a></li>
+<li><a href="#_awaiting_review_phase">5.1.3. Awaiting Review Phase</a></li>
+<li><a href="#_in_progress_phase">5.1.4. In Progress Phase</a></li>
+<li><a href="#_closed_phase">5.1.5. Closed Phase</a></li>
+</ul>
+</li>
+<li><a href="#_approvals_getting_to_closed">5.2. Approvals &amp; Getting to Closed</a></li>
+</ul>
+</li>
+<li><a href="#_publishing_to_the_master_branch">6. Publishing to the Master Branch</a>
+<ul class="sectlevel2">
+<li><a href="#_master_branch_approval">6.1. Master Branch Approval</a></li>
+<li><a href="#_updating_the_working_branch_after_technical_decision">6.2. Updating the Working Branch after Technical Decision</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch main-menu">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./index.html">Admin Guide Home</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubClients.html">GitHub Clients</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubTraining.html">GitHub Training</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./GitHubio.html">github.io Publishing</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./AsciidoctorPublish.html">Asciidoctor Publishing</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./DocPublishing.html">Publishing iTC Docs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./Maint-Project-Flow.html">Doc Workflow</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="5"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="./Interp-Flow.html">Interpretation</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While this is titled the iTC Documentation Workflow, this is about both the initial creation and the ongoing updates that will happen during the lifecycle of the documents, both as general mainentance updates as well as interpretations. Generally this has been called "maintenance" in some other places in the guidance documentation, in part due to a focus on what will be done after the first version has been published. Both the general maintenance and interpretations will follow the same workflow, though they are isolated from each other since maintenance is looking towards future revisions while interpretations are looking at already published versions.</p>
+</div>
+<div class="paragraph">
+<p>The workflows described here utilize GitHub Projects to help manage the prioritization of issues and the associated work on them. The setup for the Projects are part of the <a href="index.html">iTC Administrator Tools Overview</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_projects_releases">1. Projects &amp; Releases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Projects in GitHub are generally tied to specific releases, and not for "ongoing" work. The Maintenance project template has been created following this expectation. A repository can have multiple projects, so it is possible to be working towards multiple releases at the same time (usually on different timeframes).</p>
+</div>
+<div class="paragraph">
+<p>For example from a v1.0, there would be a maintenance project for v1.1. There should also be a maintenance project for a v1.2, or v2.0, that could be used to hold items that need to be worked on later. Once work was completed on v1.1 and it was published, that project would be closed, and the focus would move to the next project.</p>
+</div>
+<div class="paragraph">
+<p>In short, a project would be tied to a specific release version of the cPP/SD, and used to track progress until completion, at which time it would be closed.</p>
+</div>
+<div class="sect2">
+<h3 id="_notes_for_overall_goals">1.1. Notes for Overall Goals</h3>
+<div class="paragraph">
+<p>Within the project it is possible to create Notes. This can be done using the + symbol in the column header. This can be used by the Editor team to specify the list of targets for the next release (such as a bullet list of items to be tackled). This can be added in the To Do column for easy tracking (they can be in one list or per item, though with the per item they can be moved along with the issues as they are worked on, which may be useful).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parking_lotfuture_undetermined_projects">1.2. Parking Lot/Future Undetermined "Projects"</h3>
+<div class="paragraph">
+<p>While this document is focused specifically on maintenance targeted to an existing document, there will be times when useful or valid requests do not have a determined need or timeframe for inclusion.</p>
+</div>
+<div class="paragraph">
+<p>These can be handled many ways, but one way is to use the Parking Lot label and not add the issue to a specific project. Another way to handle this is to create a "futures" template (say a v2.0 if you are on v1.1) that could be "far in the future", and add these issues to that project.</p>
+</div>
+<div class="paragraph">
+<p>Either way, the issues can be found (going to the future project or filtering on the parking lot label), and provides a way to keep track of issues to handle over time.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maintenance_vs_interpretation">2. Maintenance vs Interpretation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In general the process for maintaining a cPP will largely be the same as the process for issuing an interpretation. The differences are in who is responsible, the approval process itself, the timeframe for making the update, and lastly the target of the update.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Workflow Comparison</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Difference</th>
+<th class="tableblock halign-left valign-middle">Maintenance</th>
+<th class="tableblock halign-left valign-middle">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Responsibility</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Led by the Editors Team, but the whole iTC membership participates and is responsible</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The members of the Interpretation Team are responsible until final approvals for publication</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Approvals</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Generally 25-30% of iTC membership for any particular pull request, and then 50% or higher for publication of the update to the master (usually done offline)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Generally 66-75% of IT membership with limits on the number of rejects allowed (such as no more than 25%), and then 50% approval from overall iTC after IT approval</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Timeframe</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No specific timeline, though the iTC may have defined a general release schedule</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">As soon as possible, though no guaranteed timeframe. Generally would be to have a completed response (assuming the request is no rejected) within 6-8 weeks from request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Target</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">The next version(s) of the cPP/SD. This includes any changes deemed necessary by the iTC.</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Existing, published (and still supported) versions of the cPP/SD. No changes to the requirements, only interpretations and corrections.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_teams">3. Teams</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As part of the GitHub setup, team will be created for various purposes. Here we are focused on the Editors Team and the Interpretations Team.</p>
+</div>
+<div class="sect2">
+<h3 id="_triage_team">3.1. Triage Team</h3>
+<div class="paragraph">
+<p>The purpose of the Triage team is to assign incoming issues to the correct project. The members of this team may not be a formal GitHub Team, but is a group who will be responsible for checking and properly categorizing (by Project) the incoming issues. In cases where the issues come in via templates, these members should get notifications, but some issues may come in separately.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_editors_team">3.2. Editors Team</h3>
+<div class="paragraph">
+<p>One of the recommended GitHub teams to setup is the Editor team. This is the team that is considered to be in charge of the final documentation. Likely, these are also the primary contributors to the cPP/SD, but that does not need to be the case.</p>
+</div>
+<div class="paragraph">
+<p>From the standpoint of maintenance and release, the Editor team is responsible for the master branch of the published version of the documents. Once the iTC has agreed that the working draft is ready for publication, it is up to the Editor team to move the draft into the master branch and to produce the final output (i.e. the HTML/PDF copies of the documents).</p>
+</div>
+<div class="paragraph">
+<p>The Editors team should be a small group (preferably at least 3, but probably not more than 8 depending on the size of the iTC membership).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interpretation_team">3.3. Interpretation Team</h3>
+<div class="paragraph">
+<p>For the purposes of the iTC, the Interpretation Team should be setup to specifically work on the interpretations. The IT does not have the rights to make changes to the master branch (see the <a href="#_editors_team">Editors Team</a>), though it is possible that members of the IT may also be members of the Editors Team.</p>
+</div>
+<div class="paragraph">
+<p>The IT is responsible for the Interpretation branch. Once the IT has determined the changes necessary for an interpretation, A pull request is made in the Interpretation branch for the Editors to approve into the master and publish the updated documents.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the IT will create the public record of the change (i.e. the more formal output of the Issue/Pull Request) to be posted on the interpretation page for the iTC.</p>
+</div>
+<div class="paragraph">
+<p>The IT should be comprised of a representative set of members of the iTC. The specific size should be based on the size of the iTC. Since the IT should be meeting on a regular basis (likely weekly), membership must be committed to participating.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentation_workflow_generalized">4. Documentation Workflow (Generalized)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The process of maintaining documents (this could include both initial creation as well as ongoing maintaince and interpretation) would roughly go something like this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>An issue is submitted for review</p>
+</li>
+<li>
+<p>Triage Team will triage the issue to be assigned to a project</p>
+</li>
+<li>
+<p>The issue will be prioritized by the appropriate group for work</p>
+</li>
+<li>
+<p>Members of the iTC will create updates based on issues for review</p>
+</li>
+<li>
+<p>Members of the iTC will approve the changes under review (this could take several rounds of comments/edits)</p>
+</li>
+<li>
+<p>Once a change has been approved, the Editors Team will push the changes into the appropriate master branch for publication (as either a Technical Decision or a new Release)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_workflows">5. Workflows</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The common workflow process is listed here covering both flows.</p>
+</div>
+<div class="sect2">
+<h3 id="_using_the_projects">5.1. Using the Projects</h3>
+<div class="paragraph">
+<p>Once the projects have been setup, the iTC should be able to use them to manage the open issues that are raised during the lifecycle of the documents.</p>
+</div>
+<div class="paragraph">
+<p>To track issues (and pull requests) in a project, they must be assigned to the project. When creating/editing an issue or pull request, the specific Project must be set in the metadata on the right hand side (along with Assignees/Reviewers, Labels and Milestones).</p>
+</div>
+<div class="paragraph">
+<p>The following diagram shows the phases in a workflow.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>These are provided as a stock workflow that is expected to be able to work well. An iTC can make any adjustments the feel necessary for their own needs. It is requested that any adjustments or issues that are found with this process be sent back to the Team Tools WG to share the information with other iTCs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="img-Workflow" class="imageblock">
+<div class="content">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwwAAACMCAIAAABeRblpAAAP+klEQVR42u3df2hV9R/HcWHJGjaWMEREZARiEmIiRIiEjCDCIESC/vCPIRHJEJEQIqT6K4L+EIuCgYiImAQSJlr9IyFDJAIVMZEInIiO4WQxNhnT9n3jhw6H++Ps5nd33t37eP4xzs4997N79rzv83mdn59FMwAAAChjkX8BAACAkAQAAPAfQ9I/AAAALY+QBAAAICQBAAAISQAAAEISAACAkAQAACAkAQAACEkAAABCEgAAgJAEAAAgJAEAAAhJAAAAQhIAAICQBAAAICQJSQAAAEISAACAkAQAACAkAQAACEkAAABCEgAAgJAEAAAgJAEAAAhJAAAAQhIAAICQBAAAICQBAAAISQAAAEISAACAkCQkAQAACEkAAABCEgAAgJAEAACwkEPSotajAcUvAr/gF/zy24AhaaaViPUdGxsbHx+fnJycmpp6+PBhgxThDPgFv/zyy6+Q9HQlDQ0N3b17d3R0NFSFJ0XIL7/88ssvv43vV0iaD0lXr179888/b9++HZ4izypCfvnll19++W18v0LSfEgaHBy8fPlyeIo8G2FWEfLLL7/88stv4/sVkuZD0tmzZ8NT5NmhoaGxsTFFyC+//PLLL7+N71dImg9J33333c8///zbb79FmB0dHVWE/PLLL7/88tv4foUkRQh+wS+//PIrJClCRcgv+AW//ApJipAFfsEv+OVXSFKELPDLL7/gF0KSImSBX375Bb8QkkhigV9++eWXXwhJJClCfvnll19+ISSRpAj55ZdffvnlV0gSkhQhv/zyyy+//ApJ9CtCfvnll19++RWS6FeEipBffvnll18hiX5FCH755ZdffoUk+hUh+OWXX375FZKEJEUIfsEvv/zyKyQ1XxH29fXdv3+fBX755Rf8QkhShKX/2J6ennPnzrHAL7/8gl+0YkhaVIX/s8HmKMLERx99NDk5Of9FOD09vXjx4mh5yZIljx49mpN/XfY5L1y4sGXLlnmzxi+/rea3EbaW/M6t35GRkV27dnV1dbW3t69fv/77779vnC9JSckLSULS/BVh8PLLL//xxx/zvJE9depU9gF++umnFtk688tvc/gVkprM7/j4+OrVq0s6ynnISTV+Sebnu9TSp9sq/ovjG/DSSy/F/u6aNWt++OGHau/9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" alt="Workflow.png" width="780" height="140">
+</div>
+<div class="title">Figure 1. Workflow</div>
+</div>
+<div class="paragraph">
+<p>The following table provides a high level overview of each phase of the workflow.</p>
+</div>
+<table id="Workflow" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Workflow Description</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Phase/Label</th>
+<th class="tableblock halign-left valign-top">Involved Members</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">To Do/New Issue</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Editor or Interpretation Team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the point where the Interpretation Team will perform an initial review of for categorization on incoming issues that have been created and assigned to this Project.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Awaiting Priority</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">All Project members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once an issue has been initially reviewed, it moves to the Project membership to prioritize the issue. Several labels are provided to help provide values to assign rank. For Interpretations this is limited to the IT, for Maintenance this is the whole iTC.</p>
+<p class="tableblock">For maintenance, the Editor Team manages the list of items and would be responsible for determining when an issue should be assigned for work. The IT manages this within itself.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Awaiting Review</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Assigned Members (or all until assigned)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At this point an issue has been agreed to be worked on (in some sort of prioritization), and is now waiting to begin.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">In Progress</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Assigned members</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This shows that the issue is being worked on (and should also generate a pull request associated with the issue that would appear here).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Complete</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is automatic when the issue is closed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The movement through the phases is handled by the Labels assigned to the Issue. An Issue may have labels such as enhancement or bug, but nothing related to its status. Within the project this will place them in the To do phase. To move to the next phase, the Editors (or the IT) would change the Labels, which will move the project to the next phase (or column in the display).</p>
+</div>
+<div class="paragraph">
+<p>To readily move the issues through the workflow, removing the current label and placing the next label (for example removing the Awaiting Priority label and adding the Awaiting Review label) will move the issue automatically to the next phase of the project.</p>
+</div>
+<div class="sect3">
+<h4 id="_to_do_phase">5.1.1. To Do Phase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. To Do Rules</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label/Rule</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">New Issue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When a new issue is created and added to this project it is added here.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The To Do phase starts when a new issue has been created and added to the project. Issues may be labeled differently depending on how the issue has been created or what the author thinks is the best choice among the available options.</p>
+</div>
+<div class="paragraph">
+<p>If a new issue is created using an Issue Template, it will be labeled as an enhancement. This is something that can be adjusted to meet the needs of the iTC.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Issues created from the templates should have Triage members assigned (assuming those steps were followed during the setup of the repository) so they will automatically receive notifications when they are created. For issues created without the template, unless the creator specifically assigns someone, there will be no notification, so it will be up to the Triage team to check for new issues on a regular basis.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Triage team here should be reviewing the new issue and categorizing it for further review. This is basically a triage point where the goal is to determine how the iTC should try to handle the Issue.</p>
+</div>
+<div class="paragraph">
+<p>Some examples of what could be done here (this should not be considered exhaustive):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accept the Issue and assign it to the Awaiting Priority queue</p>
+</li>
+<li>
+<p>Mark the Issue as a duplicate (reference the duplicate issue) and possibly close</p>
+</li>
+<li>
+<p>Move the Issue to a different project (for example a later planned update)</p>
+</li>
+<li>
+<p>Place the Issue on the agenda for discussion on the next scheduled meeting</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Generally triage wouldn&#8217;t close issues, though it is certainly possible that the iTC may see it as acceptable for the triage team to close some incoming issues (such as issues that are obviously not relevant, or duplicates as long as the closed issue is linked to the original one). This should be determined by the iTC to meet their needs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_awaiting_priority_phase">5.1.2. Awaiting Priority Phase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Awaiting Priority Rules</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label/Rule</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Awaiting Priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once an Issue has passed through the triage process and has been assigned to a Project, the next step is for general review on the Issue to be prioritized.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Awaiting Priority phase is what would be considered the first time the Issue is open to the broader group. At this point the members should review the issue to assign weighting to the issue. The weighting is designed to be fairly general but provide the Editors or IT with a way to see the relative ranking of issues to provide better prioritization.</p>
+</div>
+<div class="paragraph">
+<p>While this should be discussed in the issue (the reasons for assigning the weightings), the following table shows the labels that are provided and some ideas about why they may be assigned. These are not hard and fast rules, but should provide good guidance to get started.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Prioritization Weighting Labels</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Applicability +2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request is from a Scheme supporting the iTC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Applicability +1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There are/were similar requests that have not been considered previously</p>
+<p class="tableblock">Request originates from an unrelated organization but is similar/closely related to one already under consideration (could be a parking lot item)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Agreement +3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request has a Scheme-proposed or iTC consensus-based solution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Urgency +2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request is related to an active evaluation (should be moved to IT unless not critical)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Queue +X</p>
+<p class="tableblock">(options provided of 1-5)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generally used for IT, the idea is that for every 2 weeks the Issue has been in the queue and not handled, its prioritization will be increased</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Coupling -2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request is unreasonably broad in scope or contains more than one unrelated issue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Effort -2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Request is lacking a clear problem description and rationale</p>
+<p class="tableblock">Request is lacking a clear proposed solution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Risk -2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The solution to the request is likely to impact multiple inter-related requirements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Risk -1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request is asking to set aside reporting requirement</p>
+<p class="tableblock">The request is asking to set aside or modify a testing or functional requirement</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The members of the iTC can add/remove the proposed labels to the issue to assign the overall priority. The purpose of the comment tracking is to provide this justification prior to the assignment of the final priority to someone to work on</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Each added weighting label should have an associated entry in the issue comments to justify the addition (or removal) of the label.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Within the Project itself, the Issues can adjust the ordering of the items according to the labels assigned. This can be done by dragging the issues in the Awaiting Priority column into the desired order. While Issues that have been just added will always list at the top, it is possible to easily move them at any time (and the rest of the list will remain in the same order it has been set to).</p>
+</div>
+<div class="paragraph">
+<p>Once issues have been assigned a priority to work on it, it can be assigned to members to work on. This will help people prioritize the issues they work on, based on the agreed importance of the issue.</p>
+</div>
+<div class="paragraph">
+<p>Editors or IT should note the final agreed priority (likely determined during a meeting) in the issue at the time it is moved to the next phase and assigned.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_awaiting_review_phase">5.1.3. Awaiting Review Phase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Awaiting Review Rules</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label/Rule</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Awaiting Review</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once an issue has been assigned a priority for the project, it will be assigned to members to work on.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Awaiting Review phase is more like a holding area until someone has time to start working on the issue. Generally an issue will stay in this state until the assigned member(s) are able to start working on it.</p>
+</div>
+<div class="paragraph">
+<p>Once someone begins work on the issue (either in research or by starting a pull request), the label should be changed to the In Progress state.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_in_progress_phase">5.1.4. In Progress Phase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. In Progress Rules</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label/Rule</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In Progress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue (pull request) is being actively worked on.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The In Progress phase is the active phase of any issue as it symbolizes that at least one person is working towards closing the issue. This is most likely through the creation of a pull request.</p>
+</div>
+<div class="paragraph">
+<p>When a pull request is created for the issue in question, it should have a direct reference to the original issue as well as being added to the project with the In Progress label. This will help keep track of the pull request and the issue at the same time in the overall project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When a pull request is created, if the in the comment the text "closes #55" where 55 is the Issue number, then when the pull request is merged, it will automatically close the issue as well.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords">this page</a> for more information about keywords that can be used to activate this feature.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_closed_phase">5.1.5. Closed Phase</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Closed Rules</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Label/Rule</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Closed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue (pull request) has been closed (generally would mean a pull request has been created and merged).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Closed column in the project allows overall tracking on the progress of the issues that have been assigned to the project. Items will automatically be added here as issues and pull requests are closed/merged into the working branch.</p>
+</div>
+<div class="paragraph">
+<p>One difference between a maintenance and interpretation project is that on a maintenance project, when all the current issues are closed, then the release should be ready to publish. In the interpretation project though, this is just a record of closed requests that would be listed.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_approvals_getting_to_closed">5.2. Approvals &amp; Getting to Closed</h3>
+<div class="paragraph">
+<p>During the entire workflow, the goal is to capture the discussion around each issue within the issue itself. Comments into the issue provide context and remain with the issue in the repository history.</p>
+</div>
+<div class="paragraph">
+<p>Yet the actual changes that will be produced from an issue must be approved before they can be merged into the working draft (and eventually into the master). This is handled automatically by the approval process built into GitHub and setup in the repository branches. The specific number of approvals needed for any changes will be dependent on the type (maintenance or interpretation) and will be determined by the iTC and the total membership (since this number would be based on a percentage of the membership within each group).</p>
+</div>
+<div class="paragraph">
+<p>When a pull request is ready for review, the author requests review and approval. This can be to specific members or to teams. Once enough reviews have occurred, the pull request can be merged into the working branch (which will close the pull request and issue).</p>
+</div>
+<div class="paragraph">
+<p>This process means that it isn&#8217;t necessary to take a formal vote on the proposed changes (i.e. an email ballot, for example), as the results are automatically tracked as part of the approval process.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_publishing_to_the_master_branch">6. Publishing to the Master Branch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once all the issues for a project have been completed (or in the case of the IT, an individual technical decision), the next version of the cPP/SD could be ready to be published. Members of the Editors team are the only ones who can merge the working branch into the master to create the official version.</p>
+</div>
+<div class="paragraph">
+<p>Generally it would be recommended that the membership approve the current working branch in some sort of more formal vote (i.e. outside GitHub following the ToR or other defined voting procedure) for release. Once this is done and approved, the Editor team can create the pull request to merge the working branch into the master and create the published documents (i.e. PDF/HTML copies of the documents).</p>
+</div>
+<div class="sect2">
+<h3 id="_master_branch_approval">6.1. Master Branch Approval</h3>
+<div class="paragraph">
+<p>To prevent accidental publication, the master branch should require at least 2 members of the Editor team to approve the pull request to merge the working branch into the master branch. The exact numbers can be adjusted according to the needs of the iTC.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updating_the_working_branch_after_technical_decision">6.2. Updating the Working Branch after Technical Decision</h3>
+<div class="paragraph">
+<p>When a technical decision has been made and published to the Master branch has been updated, the changes need to be published back into the current Working branch so the interpretation is carried forward in the next version of the cPP/SD. This needs to be handled by the Editors.</p>
+</div>
+<div class="paragraph">
+<p>The simplest way to do this is to create a pull request from the Master to the Working branches (normally you go from the Working branch to the Master).</p>
+</div>
+<div class="paragraph">
+<p>To do this, start by creating a new Pull Request:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the base, select Working</p>
+</li>
+<li>
+<p>For the compare, select Master</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This should show the recently merged interpretation coming from the Master. The Editors can use the administrative override to immediately push the change into the Working branch.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Depending on what the change is for the interpretation, it is possible there may be editing conflicts with the Working branch. Until these are resolved the interpretation cannot be merged into the Working branch. The Editors should work with the IT to ensure that any adjustments that need to be made for the merge do not conflict with the intent of the interpretation going forward.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 0.1<br>
+Last updated 2020-01-16 13:40:37 -0500
+</div>
+</div>
+</body>
+</html>

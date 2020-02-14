@@ -459,8 +459,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>iTC Administrator Tools Overview</h1>
 <div class="details">
-<span id="revnumber">version 0.1,</span>
-<span id="revdate">2019-08-01</span>
+<span id="revnumber">version 0.2,</span>
+<span id="revdate">2019-11-15</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -474,25 +474,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_github_setup">2.1. GitHub Setup</a>
 <ul class="sectlevel3">
 <li><a href="#_organization_setup">2.1.1. Organization Setup</a></li>
-<li><a href="#_repository_setup">2.1.2. Repository Setup</a>
+<li><a href="#_organization_owners">2.1.2. Organization Owners</a></li>
+</ul>
+</li>
+<li><a href="#_github_repositories">2.2. GitHub Repositories</a>
+<ul class="sectlevel3">
+<li><a href="#_repository_setup">2.2.1. Repository Setup</a>
 <ul class="sectlevel4">
-<li><a href="#_new_itc_template_repo_labels_script">2.1.2.1. New-iTC-Template repo-labels script</a></li>
+<li><a href="#_alternate_repository_setup_import">2.2.1.1. Alternate Repository Setup (Import)</a></li>
 </ul>
 </li>
+<li><a href="#_itc_template_repository_configuration">2.2.2. iTC Template Repository Configuration</a>
+<ul class="sectlevel4">
+<li><a href="#_repo_labels_script">2.2.2.1. repo-labels script</a></li>
 </ul>
 </li>
-<li><a href="#_organization_settings">2.2. Organization Settings</a>
+<li><a href="#_repository_projects">2.2.3. Repository Projects</a>
+<ul class="sectlevel4">
+<li><a href="#_installing_project_bot">2.2.3.1. Installing project-bot</a></li>
+<li><a href="#_creating_projects">2.2.3.2. Creating Projects</a></li>
+<li><a href="#_setting_the_project_automation">2.2.3.3. Setting the Project Automation</a></li>
+</ul>
+</li>
+<li><a href="#_issue_templates">2.2.4. Issue Templates</a></li>
+</ul>
+</li>
+<li><a href="#_repository_branches">2.3. Repository Branches</a></li>
+<li><a href="#_github_repository_collaborators">2.4. GitHub Repository Collaborators</a></li>
+<li><a href="#_github_teams">2.5. GitHub Teams</a>
 <ul class="sectlevel3">
-<li><a href="#_organization_owners">2.2.1. Organization Owners</a></li>
+<li><a href="#_issue_triage_and_teams">2.5.1. Issue Triage and Teams</a></li>
 </ul>
 </li>
-<li><a href="#_github_repository_collaborators">2.3. GitHub Repository Collaborators</a></li>
-<li><a href="#_repository_branches">2.4. Repository Branches</a>
-<ul class="sectlevel3">
-<li><a href="#_branch_protection_rules">2.4.1. Branch Protection Rules</a></li>
-</ul>
-</li>
-<li><a href="#_github_backups">2.5. GitHub Backups</a></li>
+<li><a href="#_branch_protection_rules">2.6. Branch Protection Rules</a></li>
+<li><a href="#_github_backups">2.7. GitHub Backups</a></li>
 </ul>
 </li>
 <li><a href="#_asciidoctor">3. Asciidoctor</a>
@@ -504,7 +519,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_installing_the_asciidoctor_toolchain">3.2.2. Installing the Asciidoctor Toolchain</a></li>
 <li><a href="#_installing_ccuf_custom_components">3.2.3. Installing CCUF Custom Components</a>
 <ul class="sectlevel4">
-<li><a href="#_itc_tools_output_generation">3.2.3.1. iTC-Tools Output Generation</a></li>
+<li><a href="#_itc_gentools_output_generation">3.2.3.1. itc_gentools Output Generation</a></li>
 </ul>
 </li>
 <li><a href="#_test_the_toolchain">3.2.4. Test the Toolchain</a></li>
@@ -685,11 +700,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_repository_setup">2.1.2. Repository Setup</h4>
+<h4 id="_organization_owners">2.1.2. Organization Owners</h4>
 <div class="paragraph">
-<p>Once you have created the organization, you need to create some repositories. The number needed may depend on where you are in the process. Three template repositories have been created to help create the structure and populate the initial templates you need.</p>
+<p>Once the Organization has been created, the first thing that should be done is to assign at least one more Owner for the organization.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This assumes that the other users who will be owners have already created GitHub accounts for themselves.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To set another Owner for the organization, go to the Organization page and click on the People tab at the top.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the Invite button on the top right</p>
+</li>
+<li>
+<p>Enter the username of the person who will become another Owner</p>
+</li>
+<li>
+<p>Choose Owner as the role in the organization and click Send Invitation</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once the user accepts the invitation, they will automatically be added as an Owner.</p>
+</div>
+<div class="paragraph">
+<p>If the user already exists within the list of People in the Organization, then clicking the Gear icon to the right of their name and selecting "Change role&#8230;&#8203;" will let you change their role accordingly.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github_repositories">2.2. GitHub Repositories</h3>
+<div class="paragraph">
+<p>Within a GitHub organization, repositories are project spaces. Each repository has independent tracking of issues and changes. This section focuses on the setup of the repositories within the organization.</p>
+</div>
+<div class="sect3">
+<h4 id="_repository_setup">2.2.1. Repository Setup</h4>
+<div class="paragraph">
+<p>The number of repositories needed within the organization may depend on where you are in the process. Three template repositories have been created to help create the structure and populate the initial templates you need.</p>
+</div>
+<table id="RepoTable" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Template Repositories</caption>
 <colgroup>
 <col style="width: 20%;">
@@ -733,13 +796,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to the URL for the type of repository you are going to create</p>
+<p>Go to the URL for the type of repository you are going to create from the <a href="#RepoTable">Template Repositories</a> table</p>
 </li>
 <li>
 <p>Click the green "Use this template" button</p>
 </li>
 <li>
-<p>Choose the Organization as the owner (it will default to your account) and enter the Respository name, add a description if necessary, and finally click Create repository from template. The rest can be left as default</p>
+<p>Choose the Organization as the owner (it will default to your account) and enter the Repository name, add a description if necessary, and finally click Create repository from template. The rest can be left as default</p>
 </li>
 <li>
 <p>The next screen after creation is useful for getting up and running. Read the Quick setup steps, commands used, etc.</p>
@@ -747,42 +810,166 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="sect4">
-<h5 id="_new_itc_template_repo_labels_script">2.1.2.1. New-iTC-Template repo-labels script</h5>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
+<h5 id="_alternate_repository_setup_import">2.2.1.1. Alternate Repository Setup (Import)</h5>
 <div class="paragraph">
-<p>This section is only needed when creating a repository for the cPP and related documents. While it can be used for any of the repositories, the labels created are only needed in the cPP repository.</p>
-</div>
-</td>
-</tr>
-</table>
+<p>It is also possible to copy the contents of the template repository into a blank repository. If you already have a blank repository, it is possible to import the contents of the template repository to achieve the same result.</p>
 </div>
 <div class="paragraph">
-<p>When the creating the cPP repository from the New-iTC-Template repository, it is important to run the script contained in the <a href="https://github.com/itc-wgtools/repo-labels">repo-labels</a> repository. The purpose of this script is to edit the labels available for Issues and Pull Requests to a standard set (and be relied upon for other tools added over time).</p>
+<p>To import the contents to an existing blank repository:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the repository page</p>
+</li>
+<li>
+<p>At the bottom of the page, click the "Import code" button</p>
+</li>
+<li>
+<p>Enter the URL for the type of repository you are going to create from the <a href="#RepoTable">Template Repositories</a> table and click Begin Import</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>While the repository will work fine without this script, some of the features of the template repository and some planned maintenance tools will not work correctly without this script.</p>
+<p>This only works if you created a repository but have no content in it. Once there is content you will not be able to import the templates.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_itc_template_repository_configuration">2.2.2. iTC Template Repository Configuration</h4>
+<div class="paragraph">
+<p>The iTC Template repository would be the primary work location for the cPP and SD for the iTC. As such there are a few additional steps that should be followed to provide some additional capabilities to the iTC in the management of the work of maintaining the documents over the long term. While these can be used on other repositories, they are laid out with a focus on the cPP/SD work.</p>
+</div>
+<div class="sect4">
+<h5 id="_repo_labels_script">2.2.2.1. repo-labels script</h5>
+<div class="paragraph">
+<p>To support some level of standardization, a script has been created to edit the labels in the repository to a common set. These are then used for all Issues and Pull Requests in a standard way to support standard instructions/capabilities and provide a basis for potential future tools over time.</p>
 </div>
 <div class="paragraph">
-<p>Instructions for running the script are at the repository.</p>
+<p>The script and instructions for running it can be found at the <a href="https://github.com/itc-wgtools/repo-labels">repo-labels</a> repository.</p>
+</div>
+<div class="paragraph">
+<p>While the repository will work fine without this script, some of the features provided here in terms of templates for managing Issues and Pull Requests will not work correctly without these labels.</p>
 </div>
 <div class="paragraph">
 <p>The repository assumes the user has installed Ruby (such as by following <a href="#_installing_ruby">Installing Ruby</a>).</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_organization_settings">2.2. Organization Settings</h3>
 <div class="sect3">
-<h4 id="_organization_owners">2.2.1. Organization Owners</h4>
+<h4 id="_repository_projects">2.2.3. Repository Projects</h4>
 <div class="paragraph">
-<p>Once the Organization has been created, the first thing that should be done is to assign at least one more Owner for the organization.</p>
+<p>GitHub Projects allow you to track the development process (in our case, the documentation process) to the completion of the project. Projects can be very powerful, but can also be a little bit of work to setup and maintain (and GitHub doesn&#8217;t provide a large amount of capabilities natively).</p>
+</div>
+<div class="paragraph">
+<p>More general information aboud GitHub Projects can be found <a href="https://help.github.com/en/github/managing-your-work-on-github/about-project-boards">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>It is recommended to have generally, 2 projects at any one time. The first project would be the "Next Release" project (called Maintenance, here), while the second project would be for the Interpretation Team.</p>
+</div>
+<div class="sect4">
+<h5 id="_installing_project_bot">2.2.3.1. Installing project-bot</h5>
+<div class="paragraph">
+<p>To help automate some aspects of tracking projects, we are going to use <a href="https://github.com/apps/project-bot">project-bot</a>. This will let movement of tasks between steps be automated.</p>
+</div>
+<div class="paragraph">
+<p>To install project-bot:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to the <a href="https://github.com/apps/project-bot">install page</a></p>
+</li>
+<li>
+<p>Click Install</p>
+</li>
+<li>
+<p>Select the iTC organization</p>
+</li>
+<li>
+<p>Select All repositories (the default) and click Install</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once the installation is complete you should see the Settings page for the organization.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://github.com/philschatz/project-bot">project-bot site</a> provides instructions on how to create cards in the Project that can automate some tasks.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_creating_projects">2.2.3.2. Creating Projects</h5>
+<div class="paragraph">
+<p>It is possible to copy projects into the repository from the <a href="https://github.com/itc-wgtools/New-iTC-Template">New-iTC-Template</a> repository. This will copy the outline (the columns) of the project and built-in automations, but it will not copy the contents of the project (in this case the project-bot cards).</p>
+</div>
+<div class="paragraph">
+<p>To create the projects, follow these steps for each project in the <a href="https://github.com/itc-wgtools/New-iTC-Template">New-iTC-Template</a> repository:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to the <a href="https://github.com/itc-wgtools/New-iTC-Template/projects">Projects</a> tab</p>
+</li>
+<li>
+<p>Select the project to be copied</p>
+</li>
+<li>
+<p>Click the Menu icon in the upper right-hand corner of the Project display</p>
+</li>
+<li>
+<p>Click the 3 dots (&#8230;&#8203;) and select Copy</p>
+</li>
+<li>
+<p>For the Owner, choose the repository for the cPP/SD documents</p>
+</li>
+<li>
+<p>Enter the name (generally remove the [COPY] text) and the description</p>
+</li>
+<li>
+<p>Make sure Copy automation settings is checked</p>
+</li>
+<li>
+<p>Click Copy Project</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This will create 2 blank projects with the columns and a few basic automations laid out.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_setting_the_project_automation">2.2.3.3. Setting the Project Automation</h5>
+<div class="paragraph">
+<p>Once the projects have been created, the project-bot configuration needs to be added. There is no automated way to handle this, but it is a simple copy paste from the template project into the new one.</p>
+</div>
+<div class="paragraph">
+<p>The easiest way to do this is to open the template project and the new project in separate browser windows to easily copy and paste.</p>
+</div>
+<div class="paragraph">
+<p>In all but the last column of each project there is a single "card". Cards can be anything (like notes), but the project-bot can use specially formatted cards to run automations.</p>
+</div>
+<div class="paragraph">
+<p>For each column in each project, do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In a column in the template project, click the 3 dots (&#8230;&#8203;) and select Edit Note</p>
+</li>
+<li>
+<p>Copy ALL the text in the card</p>
+</li>
+<li>
+<p>Click the + in the upper right hand corner of the matching column in the new project</p>
+</li>
+<li>
+<p>Paste the contents into the note and click Add</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once all the cards have been copied, the Projects should be complete.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -792,38 +979,147 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This assumes that the other users who will be owners have already created GitHub accounts for themselves.</p>
+<p>It is expected that you will make multiple copies of the Maintenance project to manage ongoing updates.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_issue_templates">2.2.4. Issue Templates</h4>
 <div class="paragraph">
-<p>To set another Owner for the organization, go to the Organization page and click on the People tab at the top.</p>
+<p>Within the template repository for the cPP/SD are Issue Templates to help users with filling out the information needed when creating a new issue. While these may not be needed for everyone, they will likely be very helpful for users who do not participate often in the group and so may not be completely familiar with the information needed to respond to their concerns. In addition it is possible to assign labels to classify the issue as well as users to review.</p>
+</div>
+<div class="paragraph">
+<p>While the default information should be sufficient overall, to help make sure new issues are properly reviewed, it is useful to assign users to review the incoming issues.</p>
+</div>
+<table id="Workflow" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Issue Templates</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0002%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Should be Assigned</th>
+<th class="tableblock halign-left valign-top">Project</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">cPP change request</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Editor Team</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Maintenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issue specifically for the cPP (requirements, etc, but not the SD)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">PP-Configuration change request</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Editor Team</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Maintenance</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Issue specifically for a PP-Configuration document</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Request for interpretation</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Interpretation Team</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Interpretation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issue specifically related to a request for a Technical Decision/Interpretation of the current published cPP/SD</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">SD change request</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Editor Team</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Maintenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issue specifically for the SD (evaluation activities, etc, but not the cPP requirements directly)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Issue Templates should be assigned to the members of the <a href="#_github_teams">teams</a>, but they must be assigned individually. The Teams cannot be used for assigning issues, only individual users.</p>
+</div>
+<div class="paragraph">
+<p>To assign the team members to the Issue Templates (do this for each template):</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click the Invite button on the top right</p>
+<p>Open the Repository Settings</p>
 </li>
 <li>
-<p>Enter the username of the person who will become another Owner</p>
+<p>On the Options tab, under Features, click Set up templates</p>
 </li>
 <li>
-<p>Choose Owner as the role in the organization and click Send Invitation</p>
+<p>Click Preview and edit</p>
+</li>
+<li>
+<p>Click the pencil icon next to the title</p>
+</li>
+<li>
+<p>Click the Assignees gear symbol</p>
+</li>
+<li>
+<p>Select the members of the Editors team (up to 10) to be assigned to the issue when created</p>
+</li>
+<li>
+<p>Click Close Preview</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Once the user accepts the invitation, they will automatically be added as an Owner.</p>
+<p>Once all the templates have been edited with the proper Assignees:</p>
 </div>
-<div class="paragraph">
-<p>If the user already exists within the list of People in the Organization, then clicking the Gear icon to the right of their name and selecting "Change role&#8230;&#8203;" will let you change their role accordingly.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click Propose changes</p>
+</li>
+<li>
+<p>Select Commit directly to the Master branch (this should be the default branch)</p>
+</li>
+<li>
+<p>Follow the steps to commit, approve and merge the changes (this may require an Administrator override at this point)</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_github_repository_collaborators">2.3. GitHub Repository Collaborators</h3>
+<h3 id="_repository_branches">2.3. Repository Branches</h3>
+<div class="paragraph">
+<p>One of the most important aspects of working in GitHub is the use of Branches. This is how you manage the process of creating the documents. When created, a repository has a single branch, Master. This should be reserved for the current "published" content. Ongoing work though, should be done in different branches, which would then be merged into the Master on some periodic basis.</p>
+</div>
+<div class="paragraph">
+<p>Here two new branches should be created for different purposes: Working and Interpretation.</p>
+</div>
+<div class="paragraph">
+<p>To create the new branches for the repository (do this for each branch):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to the Code tab</p>
+</li>
+<li>
+<p>Click the Branch: master menu button</p>
+</li>
+<li>
+<p>Enter the name of the new branch in the dialog box and then click the Create branch at the bottom of the window</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The Working branch is where everyone should be submitting work to, while the Master would be considered the current "published" document.</p>
+</div>
+<div class="paragraph">
+<p>The Interpretation branch is specifically for the Interpretation Team to work in for changes to the existing Master, and will be limited to only members of the IT being able to merge changes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github_repository_collaborators">2.4. GitHub Repository Collaborators</h3>
 <div class="paragraph">
 <p>GitHub public repositories are visible to anyone with a GitHub account. This means that anyone can submit issues or make comments. The limitation here though is that only collaborators (members) of the repository can have permissions which let them actually edit the documents contained in the repository. In GitHub, the most common permission used for collaborators is Write.</p>
 </div>
@@ -848,54 +1144,114 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_repository_branches">2.4. Repository Branches</h3>
+<h3 id="_github_teams">2.5. GitHub Teams</h3>
 <div class="paragraph">
-<p>One of the most important aspects of working in GitHub is the use of Branches. This is how you manage the process of creating the documents. When created, a repository has a single branch, Master. This should be reserved for the current "published" content. Ongoing work though, should be done in a different branch, which would then be merged into the Master on some periodic basis. This second, working branch needs to be created and set to the default working branch.</p>
+<p>In addition to having collaborators in the repository, the organization can also create Teams of collaborators. Generally teams have two purposes: to control access to a branch and to request reviews on a Pull Request. Additionally, teams also have their own specific GitHub pages where discussions outside of Issues or Pull Requests can happen within the team.</p>
 </div>
 <div class="paragraph">
-<p>To create and set the new branch for the repository:</p>
+<p>More information about teams can be found <a href="https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/about-teams">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>While an organization can create teams to suit their needs, there should be at least 2 specific Teams that are used in the cPP/SD repository.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Teams are specific to a repository, so to have the same team in multiple repositories will require creating that team in each separate repository.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To create a new team:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to the Code tab</p>
+<p>Go to the Repository Settings</p>
 </li>
 <li>
-<p>Click the Branch: master menu button</p>
+<p>Choose the Collaborators &amp; teams menu</p>
 </li>
 <li>
-<p>Enter the name of the new branch in the dialog box (the recommended name would be working) and then click the Create branch at the bottom of the window</p>
+<p>Click +Create new team</p>
 </li>
 <li>
-<p>Click the Settings tab</p>
+<p>Enter a team name (IT, Editor, etc) and a description</p>
 </li>
 <li>
-<p>Select Branches from the left side</p>
-</li>
-<li>
-<p>Click the "master" menu button, and select the branch you just created (working)</p>
-</li>
-<li>
-<p>Click the Update button and accept the change</p>
+<p>Click Create team</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This will set the working branch to be the default branch that everyone will work against. This provides a more unrestricted environment since everyone will be working against a copy that is not the published version.</p>
+<p>Once the team has been created, you will be taken to the Team discussion page.</p>
 </div>
+<div class="paragraph">
+<p>Back on the Collaborators &amp; team settings page, you can assign the permissions to the repository for the team. The <a href="#Organization Teams">[Organization Teams]</a> table shows the recommended Teams.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Organization Teams</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Team</th>
+<th class="tableblock halign-left valign-top">Branch</th>
+<th class="tableblock halign-left valign-top">Permission</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Editors</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Master</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Maintain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To triage and prioritize Issues to be worked on.</p>
+<p class="tableblock">To manage the Master/Published versions of the cPP/SD and related docs (only users with Write access to the Master branch).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">IT</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Interpretation</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Maintain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To handle incoming Interpretation requests.</p>
+<p class="tableblock">To manage the Interpretation branch for changes related to requests (only users with Write access to the Interpretation branch).</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
-<h4 id="_branch_protection_rules">2.4.1. Branch Protection Rules</h4>
+<h4 id="_issue_triage_and_teams">2.5.1. Issue Triage and Teams</h4>
 <div class="paragraph">
-<p>Once the branches have been setup, rules should be configured to protect the branches. This protection forces changes to be reviewed before they can be merged into the document, thereby preventing accidental changes and also forcing review of the changes before they become part of the document.</p>
+<p>One important consideration with the use of teams is that they cannot be used everywhere in GitHub. The main point is that Issues cannot be assigned to a Team. When a new issue is created, it isn&#8217;t possible to specify an entire team to be notified of the issue, only up to 10 possible users.</p>
 </div>
 <div class="paragraph">
-<p>While each branch should have protection, the amount of protection is usually different. In general, each branch should be protected based on its importance. For example, the Master is the "official" version, and so should have a higher bar of approval before being changed, while the Working branch is where work on the next iteration is being done, and so should be more easily updated.</p>
+<p>To simplify incoming issue triage, it is recommended that a small team  be created (this does not have to be a formal GitHub Team) that would be assigned (for <a href="#_issue_templates">Issue Templates</a>) and would also regularly check for new issues that may have been created without having been assigned. The purpose of this group would be to assign the issue to a proper Project for review, not to necessarily issue any judgement on the contents of the issue.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_branch_protection_rules">2.6. Branch Protection Rules</h3>
+<div class="paragraph">
+<p>Once the branches, users and teams have been setup, rules should be configured to protect the branches. This protection forces changes to be reviewed before they can be merged into the document, thereby preventing accidental changes and also forcing review of the changes before they become part of the document.</p>
+</div>
+<div class="paragraph">
+<p>While each branch should have protection, the amount of protection is usually different. In general, each branch should be protected based on its importance. For example, the Master is the "official" version, and so should have a higher bar of approval as well as more limited access to the approval process to be changed, while the Working branch is where work on the next iteration is being done, and so should be more easily updated.</p>
 </div>
 <div class="paragraph">
 <p>The <a href="#Branch Protection">[Branch Protection]</a> table shows some examples of the levels to set the approvals at. What these settings mean is how many users must approve a change before it can be merged into the specified branch.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Branch Protection</caption>
+<caption class="title">Table 4. Branch Protection</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -912,20 +1268,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Master</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">50%</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 (for 10 members)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 (for 3-4 members of the Editor Team)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Working</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25%</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2 or 3 (for 10 members)</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interpretation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 or 4 (for 4-5 members of the IT)</p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The numbers should be set to something workable for the iTC. While there may be 50 members in an iTC, maybe only 14 may be active (obviously this will vary), so setting the publication to Master at 25 could prevent ever being able to make changes to the published branch. Generally it would be recommended to base these numbers on the active collaborators within the iTC, with the possibility of a slightly higher number for the Master.</p>
+<p>The numbers should be set to something workable for the iTC. While there may be 50 members in an iTC, maybe only 14 may be active (obviously this will vary), so setting approval requirement to 25 could prevent ever being able to make changes. Generally it would be recommended to base these numbers on the active collaborators within the iTC.</p>
 </div>
 <div class="paragraph">
 <p>These numbers can be changed at any time, so start low and work up based on the number of active collaborators.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the total number of approvals needed to make a change, is the layer of permissions about who can make these changes. This is where the Editor and IT teams come in, where only members of these teams will be allowed to make changes (i.e. merge Pull Requests) to specific branches.</p>
 </div>
 <div class="paragraph">
 <p>To set a rule:</p>
@@ -945,10 +1309,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Type in the name of the branch to be protected in the Branch name pattern</p>
 </li>
 <li>
-<p>Check the box in Require pull requewst reviews before merging</p>
+<p>Check the box in Require pull request reviews before merging</p>
 </li>
 <li>
 <p>Select the number in the Required approving reviews dropdown</p>
+</li>
+<li>
+<p>Check the box Include administrators</p>
+</li>
+<li>
+<p>Check the box in Restrict who can push to matching branches</p>
+</li>
+<li>
+<p>In the dialog type in the name of the appropriate team</p>
 </li>
 <li>
 <p>Click Create</p>
@@ -956,12 +1329,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="paragraph">
-<p>Do this for both the Master and the Working branches.</p>
+<p>Do this for both the Master and the Interpretation branches. The Working branch can be created without the Restrict who can push to matching branches setting being enabled.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The setting to Include administrators is specifically to ensure that administrators follow the same rules on branches as everyone else. There may be times when this is a problem, and can be adjusted as needed by the organization.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A good reference for additional information about protecting branches can be found <a href="https://github.community/t5/Support-Protips/Best-practices-for-protected-branches/ba-p/10224">here</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_github_backups">2.5. GitHub Backups</h3>
+<h3 id="_github_backups">2.7. GitHub Backups</h3>
 <div class="paragraph">
 <p>One of the most important thing to do is have a backup of the Organization repository. While online services are usually safe, occasionally there have been reports about repositories being lost in GitHub (and not when someone actually deleted it).</p>
 </div>
@@ -1136,7 +1525,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="literalblock">
 <div class="content">
 <pre>gem install asciidoctor
-gem install asciidoctor-pdf
+gem install asciidoctor-pdf --pre
 gem install asciidoctor-diagram</pre>
 </div>
 </div>
@@ -1152,12 +1541,12 @@ gem install asciidoctor-diagram</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>iTC-Tools Output Generation package</p>
+<p>itc_gentools Output Generation package</p>
 </li>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="_itc_tools_output_generation">3.2.3.1. iTC-Tools Output Generation</h5>
+<h5 id="_itc_gentools_output_generation">3.2.3.1. itc_gentools Output Generation</h5>
 <div class="paragraph">
 <p>This particular package can be found <a href="https://github.com/itc-wgtools/itc_gentools">here</a>. The site has instructions to download the Gem file needed to install the package.</p>
 </div>
@@ -1170,7 +1559,7 @@ gem install asciidoctor-diagram</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>itc-gentools both &lt;sample.adoc&gt;</pre>
+<pre>itc_gentools both &lt;sample.adoc&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1183,8 +1572,8 @@ gem install asciidoctor-diagram</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.1<br>
-Last updated 2019-11-04 15:00:35 -0500
+Version 0.2<br>
+Last updated 2020-01-31 15:24:51 -0500
 </div>
 </div>
 </body>
