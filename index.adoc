@@ -1,8 +1,8 @@
 = CCUF Team Tools Working Group
 :showtitle:
 :imagesdir: images
-:revnumber: 0.6
-:revdate: 2019-09-20
+:revnumber: 0.7
+:revdate: 2021-03-23
 
 include::menu-include.adoc[]
 
@@ -26,23 +26,16 @@ The guidance is broken into three areas:
 
 Documents that are available for public review can be seen at the link:/drafts/drafts.html[Drafts] page. This will include information about submitting comments to the WG.
 
+== External Training References
+While a lot effort has gone into creating documentation about how to best use GitHub, there are other materials available that may be better (though less focused on the CC usage). Two that have been found are:
+
+* https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV[Git and GitHub for Poets - YouTube series] (free)
+* https://www.udemy.com/course/git-and-github-for-writers/[Git and GitHub for Writers by Udemy] (this has a cost associated with it)
+
+These are provided as additional resources, and are not intended as replacement training.
+
 == Current Status
-The WG is working towards the completion of the documentation in time for the https://www.iccc2019.com/[ICCC 2019]. As a volunteer effort, it is possible not everything will be completed in time for the conference, but the documents and templates will be prioritized such that the available material should cover the highest needs.
-
-The chart below shows the expected timeline for producing the documents. We are currently in Public Review Phase 1 while working on the Phase 2 Drafts.
-
-[ditaa, "Current_Status.png"]
-....
-                                  
-    +----------+    +----------+   +----------+   +----------+   +----------+
-    |          |    | cYEL     |   | cGRE     |   |          |   |          |
-    | Phase 1  |    |  Public  |   | Phase 2  |   |  Public  |   | Public   |
-    | Drafts   |--> |  Review  |-->| Drafts   |-->|  Review  |-->| Release  |
-    |          |    |  Phase 1 |   |          |   |  Phase 2 |   |          |
-    |          |    | (June 25)|   |          |   |  (Aug30) |   | ICCC2019 |
-    +----------+    +----------+   +----------+   +----------+   +----------+
-
-....
+The WG has published a set of templates and documentation and has been updating it based on feedback from iTCs as it has been used. As a volunteer effort, our focus is first on specific requests that are brought up by people using the provided tools and information before moving on to new content.
 
 == Eating Your Own Dog Food
 This WG has been attempting to use what we are providing for the wider community. This has helped (and probably hurt initially as we all learned), but hopefully the efforts of the WG will benefit the wider community as we go forward.
